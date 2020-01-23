@@ -1,0 +1,2 @@
+Oct 23, 2019 2:15:55 PM Common_Funtions.Utilities log_file
+INFO: com.codoid.products.exception.FilloException: XMLDat field is not found

@@ -1,0 +1,1268 @@
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset='utf-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	
+		<link href='https://cdn.rawgit.com/anshooarora/extentreports-java/9fa70d0ed9c34a8ed445ceee3494d3d7de7f8918/dist/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>ExtentReports</title>
+
+</head>
+	<body class='extent standard default hide-overflow '>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo blue darken-3">Extent</a>
+
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+		</ul>
+
+		<!-- report name -->
+		<span class='report-name'>ExtentReports</span>
+		
+		<!-- report headline -->
+		<span class='report-headline'></span>
+
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<a href='#!'>
+				<span class='label suite-start-time'>Nov 15, 2019 4:10:10 PM</span>
+			</a>
+			<a href='#!'>
+				<span class='label'>v3.0.3</span>
+			</a>
+		</ul>
+	</div>
+</nav>
+		<!-- container -->
+		<div class='container'>
+
+<div id='test-view' class='view'>
+				
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+
+			<!-- category toggle -->
+			<!-- category toggle -->
+
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+					<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+					<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+
+<div id='test-view-charts' class='subview-full'>
+	<div id='charts-row' class='row nm-v nm-h'>
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Tests</div>
+				<div class='chart-box'>
+					<canvas id='parent-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span><span class='strong'>1</span> test(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong'>0</span> test(s) failed, <span class='strong'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Steps</div>
+				<div class='chart-box'>
+					<canvas id='child-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span><span class='strong'>99</span> step(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong'>0</span> step(s) failed, <span class='strong'>99</span> others
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Tests</h3>
+			<ul id='test-collection' class='test-collection'>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>PAGR1_TC001</span>
+						<span class='test-time'>Nov 15, 2019 4:10:10 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Nov 15, 2019 4:10:10 PM</span>
+	<span class='label end-time'>Nov 15, 2019 4:27:09 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 16m 59s+627ms</span>
+</div>
+	<div class='test-desc'>Create a  Quality+ esign agreement through SMFSYS  PDI. </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:10:19 PM</td>
+					<td class='step-details'>Agreement created successfully. Agreement_number-   1000940549</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:10:19 PM</td>
+					<td class='step-details'>Agreement created successfully. Agreement_number-   1000940549 has executed successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:10:23 PM</td>
+					<td class='step-details'>IntiateBrowser</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:10:23 PM</td>
+					<td class='step-details'>IntiateBrowser has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/IntiateBrowser11-15-2019 16-10-23.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/IntiateBrowser11-15-2019 16-10-23.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:12:18 PM</td>
+					<td class='step-details'>PDIAgr_Login, Financial page Solve for rates,Solve for installment are enabled and Fixrates checkbox is disabled as expected,  null, 15-11-2019 16-12-16</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:12:18 PM</td>
+					<td class='step-details'>PDIAgr_Login, Financial page Solve for rates,Solve for installment are enabled and Fixrates checkbox is disabled as expected,  null, 15-11-2019 16-12-16 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/PDIAgr_Login, Financial page Solve for rates,Solve for installment are enabled and Fixrates checkbox is disabled as expected,  null, 15-11-2019 16-12-1611-15-2019 16-12-18.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/PDIAgr_Login, Financial page Solve for rates,Solve for installment are enabled and Fixrates checkbox is disabled as expected,  null, 15-11-2019 16-12-1611-15-2019 16-12-18.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:12:21 PM</td>
+					<td class='step-details'>PDIAgr_Login, Advance amount verified is7000.00,  null, 15-11-2019 16-12-16</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:12:22 PM</td>
+					<td class='step-details'>PDIAgr_Login, Advance amount verified is7000.00,  null, 15-11-2019 16-12-16 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/PDIAgr_Login, Advance amount verified is7000.00,  null, 15-11-2019 16-12-1611-15-2019 16-12-22.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/PDIAgr_Login, Advance amount verified is7000.00,  null, 15-11-2019 16-12-1611-15-2019 16-12-22.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:12:36 PM</td>
+					<td class='step-details'>CallvalBureaudatas, Bank Standard displayed asYES,  YES, 15-11-2019 16-12-25</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:12:37 PM</td>
+					<td class='step-details'>CallvalBureaudatas, Bank Standard displayed asYES,  YES, 15-11-2019 16-12-25 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/CallvalBureaudatas, Bank Standard displayed asYES,  YES, 15-11-2019 16-12-2511-15-2019 16-12-37.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/CallvalBureaudatas, Bank Standard displayed asYES,  YES, 15-11-2019 16-12-2511-15-2019 16-12-37.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:12:37 PM</td>
+					<td class='step-details'>CallvalBureaudatas, BankEnhanced displayed asYES,  YES, 15-11-2019 16-12-25</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:12:37 PM</td>
+					<td class='step-details'>CallvalBureaudatas, BankEnhanced displayed asYES,  YES, 15-11-2019 16-12-25 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/CallvalBureaudatas, BankEnhanced displayed asYES,  YES, 15-11-2019 16-12-2511-15-2019 16-12-37.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/CallvalBureaudatas, BankEnhanced displayed asYES,  YES, 15-11-2019 16-12-2511-15-2019 16-12-37.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:12:37 PM</td>
+					<td class='step-details'>CallvalBureaudatas, IDEnhanced displayed as YES,  YES, 15-11-2019 16-12-25</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:12:38 PM</td>
+					<td class='step-details'>CallvalBureaudatas, IDEnhanced displayed as YES,  YES, 15-11-2019 16-12-25 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/CallvalBureaudatas, IDEnhanced displayed as YES,  YES, 15-11-2019 16-12-2511-15-2019 16-12-38.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/CallvalBureaudatas, IDEnhanced displayed as YES,  YES, 15-11-2019 16-12-2511-15-2019 16-12-38.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:12:38 PM</td>
+					<td class='step-details'>CallvalBureaudatas, BankEnhancedscore displayed as45,  45, 15-11-2019 16-12-25</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:12:38 PM</td>
+					<td class='step-details'>CallvalBureaudatas, BankEnhancedscore displayed as45,  45, 15-11-2019 16-12-25 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/CallvalBureaudatas, BankEnhancedscore displayed as45,  45, 15-11-2019 16-12-2511-15-2019 16-12-38.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/CallvalBureaudatas, BankEnhancedscore displayed as45,  45, 15-11-2019 16-12-2511-15-2019 16-12-38.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:12:41 PM</td>
+					<td class='step-details'>CallvalBureaudatas, Warning message is displayed as expected,  Warning! A match was made for this applicant but no initiative data was found, 15-11-2019 16-12-25</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:12:41 PM</td>
+					<td class='step-details'>CallvalBureaudatas, Warning message is displayed as expected,  Warning! A match was made for this applicant but no initiative data was found, 15-11-2019 16-12-25 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/CallvalBureaudatas, Warning message is displayed as expected,  Warning! A match was made for this applicant but no initiative data was found, 15-11-2019 16-12-2511-15-2019 16-12-41.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/CallvalBureaudatas, Warning message is displayed as expected,  Warning! A match was made for this applicant but no initiative data was found, 15-11-2019 16-12-2511-15-2019 16-12-41.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:12:42 PM</td>
+					<td class='step-details'>CallvalBureaudatas, Search ID is displayed as expected,  {C7FD6FA9-2E5D-44D1-9261-F53000421C1F}, 15-11-2019 16-12-25</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:12:43 PM</td>
+					<td class='step-details'>CallvalBureaudatas, Search ID is displayed as expected,  {C7FD6FA9-2E5D-44D1-9261-F53000421C1F}, 15-11-2019 16-12-25 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/CallvalBureaudatas, Search ID is displayed as expected,  {C7FD6FA9-2E5D-44D1-9261-F53000421C1F}, 15-11-2019 16-12-2511-15-2019 16-12-43.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/CallvalBureaudatas, Search ID is displayed as expected,  {C7FD6FA9-2E5D-44D1-9261-F53000421C1F}, 15-11-2019 16-12-2511-15-2019 16-12-43.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:12:47 PM</td>
+					<td class='step-details'>CallvalBureaudatas, Customer Call Report BSB Quotation row is greater than 0,  null, 15-11-2019 16-12-25</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:12:48 PM</td>
+					<td class='step-details'>CallvalBureaudatas, Customer Call Report BSB Quotation row is greater than 0,  null, 15-11-2019 16-12-25 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/CallvalBureaudatas, Customer Call Report BSB Quotation row is greater than 0,  null, 15-11-2019 16-12-2511-15-2019 16-12-48.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/CallvalBureaudatas, Customer Call Report BSB Quotation row is greater than 0,  null, 15-11-2019 16-12-2511-15-2019 16-12-48.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:12:55 PM</td>
+					<td class='step-details'>PDIAgrReferred</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:12:56 PM</td>
+					<td class='step-details'>PDIAgrReferred has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/PDIAgrReferred11-15-2019 16-12-55.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/PDIAgrReferred11-15-2019 16-12-55.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:12:57 PM</td>
+					<td class='step-details'>PDIAgrReferred, Installment amount is 242.57,  242.57, 15-11-2019 16-12-50</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:12:57 PM</td>
+					<td class='step-details'>PDIAgrReferred, Installment amount is 242.57,  242.57, 15-11-2019 16-12-50 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/PDIAgrReferred, Installment amount is 242.57,  242.57, 15-11-2019 16-12-5011-15-2019 16-12-57.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/PDIAgrReferred, Installment amount is 242.57,  242.57, 15-11-2019 16-12-5011-15-2019 16-12-57.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:13:01 PM</td>
+					<td class='step-details'>Event log , Special term count is greater than 0 ,  null, 15-11-2019 16-12-50</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:13:02 PM</td>
+					<td class='step-details'>Event log , Special term count is greater than 0 ,  null, 15-11-2019 16-12-50 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Event log , Special term count is greater than 0 ,  null, 15-11-2019 16-12-5011-15-2019 16-13-02.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Event log , Special term count is greater than 0 ,  null, 15-11-2019 16-12-5011-15-2019 16-13-02.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:13:03 PM</td>
+					<td class='step-details'>PDIAgrReferred, MotorFront end StatusReferred,  Referred, 15-11-2019 16-12-50</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:13:03 PM</td>
+					<td class='step-details'>PDIAgrReferred, MotorFront end StatusReferred,  Referred, 15-11-2019 16-12-50 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/PDIAgrReferred, MotorFront end StatusReferred,  Referred, 15-11-2019 16-12-5011-15-2019 16-13-03.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/PDIAgrReferred, MotorFront end StatusReferred,  Referred, 15-11-2019 16-12-5011-15-2019 16-13-03.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:13:03 PM</td>
+					<td class='step-details'>PDIAgrReferred, MotorFront end PlanCall Validate Auto Refer   (15-Nov-2019),  Call Validate Auto Refer   (15-Nov-2019), 15-11-2019 16-12-50</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:13:04 PM</td>
+					<td class='step-details'>PDIAgrReferred, MotorFront end PlanCall Validate Auto Refer   (15-Nov-2019),  Call Validate Auto Refer   (15-Nov-2019), 15-11-2019 16-12-50 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/PDIAgrReferred, MotorFront end PlanCall Validate Auto Refer   (15-Nov-2019),  Call Validate Auto Refer   (15-Nov-2019), 15-11-2019 16-12-5011-15-2019 16-13-04.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/PDIAgrReferred, MotorFront end PlanCall Validate Auto Refer   (15-Nov-2019),  Call Validate Auto Refer   (15-Nov-2019), 15-11-2019 16-12-5011-15-2019 16-13-04.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:13:04 PM</td>
+					<td class='step-details'>PDIAgrReferred, Residual value is displayed as blank or equal to Zero,  , 15-11-2019 16-12-50</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:13:04 PM</td>
+					<td class='step-details'>PDIAgrReferred, Residual value is displayed as blank or equal to Zero,  , 15-11-2019 16-12-50 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/PDIAgrReferred, Residual value is displayed as blank or equal to Zero,  , 15-11-2019 16-12-5011-15-2019 16-13-04.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/PDIAgrReferred, Residual value is displayed as blank or equal to Zero,  , 15-11-2019 16-12-5011-15-2019 16-13-04.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:13:04 PM</td>
+					<td class='step-details'>PDIAgrReferred, Halfway value calculated and the value is3760.98,  3760.98, 15-11-2019 16-12-50</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:13:04 PM</td>
+					<td class='step-details'>PDIAgrReferred, Halfway value calculated and the value is3760.98,  3760.98, 15-11-2019 16-12-50 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/PDIAgrReferred, Halfway value calculated and the value is3760.98,  3760.98, 15-11-2019 16-12-5011-15-2019 16-13-04.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/PDIAgrReferred, Halfway value calculated and the value is3760.98,  3760.98, 15-11-2019 16-12-5011-15-2019 16-13-04.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:13:04 PM</td>
+					<td class='step-details'>PDIAgrReferred, VT exposure value calculated and the value is319.7,  319.7, 15-11-2019 16-12-50</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:13:05 PM</td>
+					<td class='step-details'>PDIAgrReferred, VT exposure value calculated and the value is319.7,  319.7, 15-11-2019 16-12-50 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/PDIAgrReferred, VT exposure value calculated and the value is319.7,  319.7, 15-11-2019 16-12-5011-15-2019 16-13-05.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/PDIAgrReferred, VT exposure value calculated and the value is319.7,  319.7, 15-11-2019 16-12-5011-15-2019 16-13-05.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:13:07 PM</td>
+					<td class='step-details'>Agr_events_check, Automatically ReferredGenerated,  Automatically Referred, 15-11-2019 16-13-06</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:13:07 PM</td>
+					<td class='step-details'>Agr_events_check, Automatically ReferredGenerated,  Automatically Referred, 15-11-2019 16-13-06 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Automatically ReferredGenerated,  Automatically Referred, 15-11-2019 16-13-0611-15-2019 16-13-07.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Automatically ReferredGenerated,  Automatically Referred, 15-11-2019 16-13-0611-15-2019 16-13-07.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:13:07 PM</td>
+					<td class='step-details'>Agr_events_check, Call Validate Decision MadeGenerated,  Call Validate Decision Made, 15-11-2019 16-13-06</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:13:07 PM</td>
+					<td class='step-details'>Agr_events_check, Call Validate Decision MadeGenerated,  Call Validate Decision Made, 15-11-2019 16-13-06 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Call Validate Decision MadeGenerated,  Call Validate Decision Made, 15-11-2019 16-13-0611-15-2019 16-13-07.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Call Validate Decision MadeGenerated,  Call Validate Decision Made, 15-11-2019 16-13-0611-15-2019 16-13-07.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:13:08 PM</td>
+					<td class='step-details'>Agr_events_check, Additional Attribute AddedGenerated,  SMF VT Exposure-319.70, 15-11-2019 16-13-06</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:13:08 PM</td>
+					<td class='step-details'>Agr_events_check, Additional Attribute AddedGenerated,  SMF VT Exposure-319.70, 15-11-2019 16-13-06 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Additional Attribute AddedGenerated,  SMF VT Exposure-319.70, 15-11-2019 16-13-0611-15-2019 16-13-08.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Additional Attribute AddedGenerated,  SMF VT Exposure-319.70, 15-11-2019 16-13-0611-15-2019 16-13-08.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:13:08 PM</td>
+					<td class='step-details'>Agr_events_check, Additional Attribute AddedGenerated,  SMF Halfway Value-3760.98, 15-11-2019 16-13-06</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:13:08 PM</td>
+					<td class='step-details'>Agr_events_check, Additional Attribute AddedGenerated,  SMF Halfway Value-3760.98, 15-11-2019 16-13-06 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Additional Attribute AddedGenerated,  SMF Halfway Value-3760.98, 15-11-2019 16-13-0611-15-2019 16-13-08.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Additional Attribute AddedGenerated,  SMF Halfway Value-3760.98, 15-11-2019 16-13-0611-15-2019 16-13-08.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:13:10 PM</td>
+					<td class='step-details'>Agr_events_check, Finishline Available SetGenerated,  New Value-Y-null, 15-11-2019 16-13-09</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:13:10 PM</td>
+					<td class='step-details'>Agr_events_check, Finishline Available SetGenerated,  New Value-Y-null, 15-11-2019 16-13-09 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Finishline Available SetGenerated,  New Value-Y-null, 15-11-2019 16-13-0911-15-2019 16-13-10.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Finishline Available SetGenerated,  New Value-Y-null, 15-11-2019 16-13-0911-15-2019 16-13-10.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:13:10 PM</td>
+					<td class='step-details'>Agr_events_check, Product EvaluatedGenerated,  New Product-Quality+ Brand-null, 15-11-2019 16-13-09</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:13:11 PM</td>
+					<td class='step-details'>Agr_events_check, Product EvaluatedGenerated,  New Product-Quality+ Brand-null, 15-11-2019 16-13-09 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Product EvaluatedGenerated,  New Product-Quality+ Brand-null, 15-11-2019 16-13-0911-15-2019 16-13-11.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Product EvaluatedGenerated,  New Product-Quality+ Brand-null, 15-11-2019 16-13-0911-15-2019 16-13-11.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:13:11 PM</td>
+					<td class='step-details'>Agr_events_check, Decisioning StartedGenerated,  null-null-null, 15-11-2019 16-13-09</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:13:11 PM</td>
+					<td class='step-details'>Agr_events_check, Decisioning StartedGenerated,  null-null-null, 15-11-2019 16-13-09 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Decisioning StartedGenerated,  null-null-null, 15-11-2019 16-13-0911-15-2019 16-13-11.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Decisioning StartedGenerated,  null-null-null, 15-11-2019 16-13-0911-15-2019 16-13-11.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:13:11 PM</td>
+					<td class='step-details'>Agr_events_check, Call Report Search RequiredGenerated,  null-null-null, 15-11-2019 16-13-09</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:13:11 PM</td>
+					<td class='step-details'>Agr_events_check, Call Report Search RequiredGenerated,  null-null-null, 15-11-2019 16-13-09 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Call Report Search RequiredGenerated,  null-null-null, 15-11-2019 16-13-0911-15-2019 16-13-11.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Call Report Search RequiredGenerated,  null-null-null, 15-11-2019 16-13-0911-15-2019 16-13-11.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:13:12 PM</td>
+					<td class='step-details'>Agr_events_check, Call Report Search CompletedGenerated,  null-null-null, 15-11-2019 16-13-09</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:13:12 PM</td>
+					<td class='step-details'>Agr_events_check, Call Report Search CompletedGenerated,  null-null-null, 15-11-2019 16-13-09 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Call Report Search CompletedGenerated,  null-null-null, 15-11-2019 16-13-0911-15-2019 16-13-12.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Call Report Search CompletedGenerated,  null-null-null, 15-11-2019 16-13-0911-15-2019 16-13-12.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:13:12 PM</td>
+					<td class='step-details'>Agr_events_check, Trace Score SetGenerated,  New Value-100-null, 15-11-2019 16-13-09</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:13:12 PM</td>
+					<td class='step-details'>Agr_events_check, Trace Score SetGenerated,  New Value-100-null, 15-11-2019 16-13-09 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Trace Score SetGenerated,  New Value-100-null, 15-11-2019 16-13-0911-15-2019 16-13-12.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Trace Score SetGenerated,  New Value-100-null, 15-11-2019 16-13-0911-15-2019 16-13-12.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:13:12 PM</td>
+					<td class='step-details'>Agr_events_check, OI Score SetGenerated,  OI Score Set-null-null, 15-11-2019 16-13-09</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:13:13 PM</td>
+					<td class='step-details'>Agr_events_check, OI Score SetGenerated,  OI Score Set-null-null, 15-11-2019 16-13-09 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, OI Score SetGenerated,  OI Score Set-null-null, 15-11-2019 16-13-0911-15-2019 16-13-13.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, OI Score SetGenerated,  OI Score Set-null-null, 15-11-2019 16-13-0911-15-2019 16-13-13.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:13:13 PM</td>
+					<td class='step-details'>Agr_events_check, Gauge Score SetGenerated,  Gauge Score Set-532-null, 15-11-2019 16-13-09</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:13:13 PM</td>
+					<td class='step-details'>Agr_events_check, Gauge Score SetGenerated,  Gauge Score Set-532-null, 15-11-2019 16-13-09 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Gauge Score SetGenerated,  Gauge Score Set-532-null, 15-11-2019 16-13-0911-15-2019 16-13-13.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Gauge Score SetGenerated,  Gauge Score Set-532-null, 15-11-2019 16-13-0911-15-2019 16-13-13.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:13:13 PM</td>
+					<td class='step-details'>Agr_events_check, Pre Vet Ruleset EvaluatedGenerated,  Pre Vet Ruleset Evaluated-FL Pre Vet v2 Ruleset-null, 15-11-2019 16-13-09</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:13:14 PM</td>
+					<td class='step-details'>Agr_events_check, Pre Vet Ruleset EvaluatedGenerated,  Pre Vet Ruleset Evaluated-FL Pre Vet v2 Ruleset-null, 15-11-2019 16-13-09 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Pre Vet Ruleset EvaluatedGenerated,  Pre Vet Ruleset Evaluated-FL Pre Vet v2 Ruleset-null, 15-11-2019 16-13-0911-15-2019 16-13-14.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Pre Vet Ruleset EvaluatedGenerated,  Pre Vet Ruleset Evaluated-FL Pre Vet v2 Ruleset-null, 15-11-2019 16-13-0911-15-2019 16-13-14.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:13:14 PM</td>
+					<td class='step-details'>Agr_events_check, Post Bureau Ruleset EvaluatedGenerated,  Post Bureau Ruleset Evaluated-null-null, 15-11-2019 16-13-09</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:13:14 PM</td>
+					<td class='step-details'>Agr_events_check, Post Bureau Ruleset EvaluatedGenerated,  Post Bureau Ruleset Evaluated-null-null, 15-11-2019 16-13-09 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Post Bureau Ruleset EvaluatedGenerated,  Post Bureau Ruleset Evaluated-null-null, 15-11-2019 16-13-0911-15-2019 16-13-14.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Post Bureau Ruleset EvaluatedGenerated,  Post Bureau Ruleset Evaluated-null-null, 15-11-2019 16-13-0911-15-2019 16-13-14.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:13:14 PM</td>
+					<td class='step-details'>Agr_events_check, CallValidate Ruleset EvaluatedGenerated,  CallValidate Ruleset Evaluated-FL Call Validate Ruleset v2-null, 15-11-2019 16-13-09</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:13:15 PM</td>
+					<td class='step-details'>Agr_events_check, CallValidate Ruleset EvaluatedGenerated,  CallValidate Ruleset Evaluated-FL Call Validate Ruleset v2-null, 15-11-2019 16-13-09 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, CallValidate Ruleset EvaluatedGenerated,  CallValidate Ruleset Evaluated-FL Call Validate Ruleset v2-null, 15-11-2019 16-13-0911-15-2019 16-13-15.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, CallValidate Ruleset EvaluatedGenerated,  CallValidate Ruleset Evaluated-FL Call Validate Ruleset v2-null, 15-11-2019 16-13-0911-15-2019 16-13-15.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:13:15 PM</td>
+					<td class='step-details'>Agr_events_check, E-sig required setGenerated,  null-Y-null, 15-11-2019 16-13-09</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:13:15 PM</td>
+					<td class='step-details'>Agr_events_check, E-sig required setGenerated,  null-Y-null, 15-11-2019 16-13-09 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, E-sig required setGenerated,  null-Y-null, 15-11-2019 16-13-0911-15-2019 16-13-15.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, E-sig required setGenerated,  null-Y-null, 15-11-2019 16-13-0911-15-2019 16-13-15.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:13:15 PM</td>
+					<td class='step-details'>Agr_events_check, Quality+ and PCP ExceptionsGenerated,  Quality+ and PCP ExceptionsEvent Notes count forQuality+ and PCP ExceptionsSMF Common Ruleset-3, 15-11-2019 16-13-09</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:13:16 PM</td>
+					<td class='step-details'>Agr_events_check, Quality+ and PCP ExceptionsGenerated,  Quality+ and PCP ExceptionsEvent Notes count forQuality+ and PCP ExceptionsSMF Common Ruleset-3, 15-11-2019 16-13-09 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Quality+ and PCP ExceptionsGenerated,  Quality+ and PCP ExceptionsEvent Notes count forQuality+ and PCP ExceptionsSMF Common Ruleset-3, 15-11-2019 16-13-0911-15-2019 16-13-16.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Quality+ and PCP ExceptionsGenerated,  Quality+ and PCP ExceptionsEvent Notes count forQuality+ and PCP ExceptionsSMF Common Ruleset-3, 15-11-2019 16-13-0911-15-2019 16-13-16.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:13:17 PM</td>
+					<td class='step-details'>Agr_events_check, DummyGenerated,  Decision Reason Count of 1000940549is greater than one10, 15-11-2019 16-13-17</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:13:17 PM</td>
+					<td class='step-details'>Agr_events_check, DummyGenerated,  Decision Reason Count of 1000940549is greater than one10, 15-11-2019 16-13-17 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, DummyGenerated,  Decision Reason Count of 1000940549is greater than one10, 15-11-2019 16-13-1711-15-2019 16-13-17.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, DummyGenerated,  Decision Reason Count of 1000940549is greater than one10, 15-11-2019 16-13-1711-15-2019 16-13-17.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:13:18 PM</td>
+					<td class='step-details'>Agreement decision check successful Agreement_decision is    Referred</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:13:19 PM</td>
+					<td class='step-details'>Agreement decision check successful Agreement_decision is    Referred has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agreement decision check successful Agreement_decision is    Referred11-15-2019 16-13-19.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agreement decision check successful Agreement_decision is    Referred11-15-2019 16-13-19.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:13:30 PM</td>
+					<td class='step-details'>PDI_Score_Validate, Status is Accepted,  Accepted, 15-11-2019 16-13-19</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:13:31 PM</td>
+					<td class='step-details'>PDI_Score_Validate, Status is Accepted,  Accepted, 15-11-2019 16-13-19 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/PDI_Score_Validate, Status is Accepted,  Accepted, 15-11-2019 16-13-1911-15-2019 16-13-31.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/PDI_Score_Validate, Status is Accepted,  Accepted, 15-11-2019 16-13-1911-15-2019 16-13-31.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:13:32 PM</td>
+					<td class='step-details'>PDI_Score_Validate, Agreement plan isAwaiting eSign   (15-Nov-2019),  Awaiting eSign   (15-Nov-2019), 15-11-2019 16-13-19</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:13:32 PM</td>
+					<td class='step-details'>PDI_Score_Validate, Agreement plan isAwaiting eSign   (15-Nov-2019),  Awaiting eSign   (15-Nov-2019), 15-11-2019 16-13-19 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/PDI_Score_Validate, Agreement plan isAwaiting eSign   (15-Nov-2019),  Awaiting eSign   (15-Nov-2019), 15-11-2019 16-13-1911-15-2019 16-13-32.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/PDI_Score_Validate, Agreement plan isAwaiting eSign   (15-Nov-2019),  Awaiting eSign   (15-Nov-2019), 15-11-2019 16-13-1911-15-2019 16-13-32.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:14:05 PM</td>
+					<td class='step-details'>PDI_Score_Validate, Esign url generated,  https-//startline.dev.iocs-testing.com/iocs-web/startline/online/5ce13ece-fadd-450c-9a06-d4231e613023, 15-11-2019 16-13-19</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:14:05 PM</td>
+					<td class='step-details'>PDI_Score_Validate, Esign url generated,  https-//startline.dev.iocs-testing.com/iocs-web/startline/online/5ce13ece-fadd-450c-9a06-d4231e613023, 15-11-2019 16-13-19 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/PDI_Score_Validate, Esign url generated,  https-//startline.dev.iocs-testing.com/iocs-web/startline/online/5ce13ece-fadd-450c-9a06-d4231e613023, 15-11-2019 16-13-1911-15-2019 16-14-05.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/PDI_Score_Validate, Esign url generated,  https-//startline.dev.iocs-testing.com/iocs-web/startline/online/5ce13ece-fadd-450c-9a06-d4231e613023, 15-11-2019 16-13-1911-15-2019 16-14-05.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:14:07 PM</td>
+					<td class='step-details'>Agr_events_check, Automatically ApprovedGenerated,  Automatically Approved, 15-11-2019 16-14-07</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:14:08 PM</td>
+					<td class='step-details'>Agr_events_check, Automatically ApprovedGenerated,  Automatically Approved, 15-11-2019 16-14-07 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Automatically ApprovedGenerated,  Automatically Approved, 15-11-2019 16-14-0711-15-2019 16-14-08.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Automatically ApprovedGenerated,  Automatically Approved, 15-11-2019 16-14-0711-15-2019 16-14-08.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:14:08 PM</td>
+					<td class='step-details'>Agr_events_check, CV Override Decision MadeGenerated,  CV Override Decision Made, 15-11-2019 16-14-07</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:14:08 PM</td>
+					<td class='step-details'>Agr_events_check, CV Override Decision MadeGenerated,  CV Override Decision Made, 15-11-2019 16-14-07 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, CV Override Decision MadeGenerated,  CV Override Decision Made, 15-11-2019 16-14-0711-15-2019 16-14-08.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, CV Override Decision MadeGenerated,  CV Override Decision Made, 15-11-2019 16-14-0711-15-2019 16-14-08.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:14:08 PM</td>
+					<td class='step-details'>Agr_events_check, Approved Pack RequestedGenerated,  Approved Pack Requested, 15-11-2019 16-14-07</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:14:09 PM</td>
+					<td class='step-details'>Agr_events_check, Approved Pack RequestedGenerated,  Approved Pack Requested, 15-11-2019 16-14-07 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Approved Pack RequestedGenerated,  Approved Pack Requested, 15-11-2019 16-14-0711-15-2019 16-14-09.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Approved Pack RequestedGenerated,  Approved Pack Requested, 15-11-2019 16-14-0711-15-2019 16-14-09.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:14:09 PM</td>
+					<td class='step-details'>Agr_events_check, IOCS Initiate SuccessGenerated,  IOCS Initiate Success, 15-11-2019 16-14-07</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:14:09 PM</td>
+					<td class='step-details'>Agr_events_check, IOCS Initiate SuccessGenerated,  IOCS Initiate Success, 15-11-2019 16-14-07 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, IOCS Initiate SuccessGenerated,  IOCS Initiate Success, 15-11-2019 16-14-0711-15-2019 16-14-09.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, IOCS Initiate SuccessGenerated,  IOCS Initiate Success, 15-11-2019 16-14-0711-15-2019 16-14-09.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:14:09 PM</td>
+					<td class='step-details'>Agr_events_check, IOCS Dealer URL SetGenerated,  IOCS Dealer URL Set, 15-11-2019 16-14-07</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:14:10 PM</td>
+					<td class='step-details'>Agr_events_check, IOCS Dealer URL SetGenerated,  IOCS Dealer URL Set, 15-11-2019 16-14-07 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, IOCS Dealer URL SetGenerated,  IOCS Dealer URL Set, 15-11-2019 16-14-0711-15-2019 16-14-10.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, IOCS Dealer URL SetGenerated,  IOCS Dealer URL Set, 15-11-2019 16-14-0711-15-2019 16-14-10.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:14:10 PM</td>
+					<td class='step-details'>Agr_events_check, Document EmailedGenerated,  Document Emailed, 15-11-2019 16-14-07</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:14:10 PM</td>
+					<td class='step-details'>Agr_events_check, Document EmailedGenerated,  Document Emailed, 15-11-2019 16-14-07 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Document EmailedGenerated,  Document Emailed, 15-11-2019 16-14-0711-15-2019 16-14-10.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Document EmailedGenerated,  Document Emailed, 15-11-2019 16-14-0711-15-2019 16-14-10.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:14:10 PM</td>
+					<td class='step-details'>Agr_events_check, Document sent to DealfloGenerated,  Document sent to Dealflo, 15-11-2019 16-14-07</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:14:11 PM</td>
+					<td class='step-details'>Agr_events_check, Document sent to DealfloGenerated,  Document sent to Dealflo, 15-11-2019 16-14-07 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Document sent to DealfloGenerated,  Document sent to Dealflo, 15-11-2019 16-14-0711-15-2019 16-14-11.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Document sent to DealfloGenerated,  Document sent to Dealflo, 15-11-2019 16-14-0711-15-2019 16-14-11.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:14:15 PM</td>
+					<td class='step-details'>PDI_Score_Validate, Document150 OnPremise HP Doc (RX) is generated  ,  50 OnPremise HP Doc (RX), 15-11-2019 16-13-19</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:14:16 PM</td>
+					<td class='step-details'>PDI_Score_Validate, Document150 OnPremise HP Doc (RX) is generated  ,  50 OnPremise HP Doc (RX), 15-11-2019 16-13-19 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/PDI_Score_Validate, Document150 OnPremise HP Doc (RX) is generated  ,  50 OnPremise HP Doc (RX), 15-11-2019 16-13-1911-15-2019 16-14-16.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/PDI_Score_Validate, Document150 OnPremise HP Doc (RX) is generated  ,  50 OnPremise HP Doc (RX), 15-11-2019 16-13-1911-15-2019 16-14-16.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:14:16 PM</td>
+					<td class='step-details'>PDI_Score_Validate, Document2OnPremise HP Acc (RX) is generated ,  OnPremise HP Acc (RX), 15-11-2019 16-13-19</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:14:16 PM</td>
+					<td class='step-details'>PDI_Score_Validate, Document2OnPremise HP Acc (RX) is generated ,  OnPremise HP Acc (RX), 15-11-2019 16-13-19 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/PDI_Score_Validate, Document2OnPremise HP Acc (RX) is generated ,  OnPremise HP Acc (RX), 15-11-2019 16-13-1911-15-2019 16-14-16.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/PDI_Score_Validate, Document2OnPremise HP Acc (RX) is generated ,  OnPremise HP Acc (RX), 15-11-2019 16-13-1911-15-2019 16-14-16.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:14:16 PM</td>
+					<td class='step-details'>PDI_Score_Validate, Document3OnPremise HP Doc (RX) is generated ,  OnPremise HP Doc (RX), 15-11-2019 16-13-19</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:14:16 PM</td>
+					<td class='step-details'>PDI_Score_Validate, Document3OnPremise HP Doc (RX) is generated ,  OnPremise HP Doc (RX), 15-11-2019 16-13-19 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/PDI_Score_Validate, Document3OnPremise HP Doc (RX) is generated ,  OnPremise HP Doc (RX), 15-11-2019 16-13-1911-15-2019 16-14-16.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/PDI_Score_Validate, Document3OnPremise HP Doc (RX) is generated ,  OnPremise HP Doc (RX), 15-11-2019 16-13-1911-15-2019 16-14-16.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:14:20 PM</td>
+					<td class='step-details'>Agreement decision check successful Agreement_decision is    Accepted</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:14:20 PM</td>
+					<td class='step-details'>Agreement decision check successful Agreement_decision is    Accepted has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agreement decision check successful Agreement_decision is    Accepted11-15-2019 16-14-20.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agreement decision check successful Agreement_decision is    Accepted11-15-2019 16-14-20.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:14:20 PM</td>
+					<td class='step-details'>GetEsignURL</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:14:21 PM</td>
+					<td class='step-details'>GetEsignURL has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/GetEsignURL11-15-2019 16-14-21.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/GetEsignURL11-15-2019 16-14-21.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:14:21 PM</td>
+					<td class='step-details'>GetEsignURL, esign url generated ,  https-//startline.dev.iocs-testing.com/iocs-web/startline/online/5ce13ece-fadd-450c-9a06-d4231e613023, 15-11-2019 16-14-20</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:14:21 PM</td>
+					<td class='step-details'>GetEsignURL, esign url generated ,  https-//startline.dev.iocs-testing.com/iocs-web/startline/online/5ce13ece-fadd-450c-9a06-d4231e613023, 15-11-2019 16-14-20 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/GetEsignURL, esign url generated ,  https-//startline.dev.iocs-testing.com/iocs-web/startline/online/5ce13ece-fadd-450c-9a06-d4231e613023, 15-11-2019 16-14-2011-15-2019 16-14-21.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/GetEsignURL, esign url generated ,  https-//startline.dev.iocs-testing.com/iocs-web/startline/online/5ce13ece-fadd-450c-9a06-d4231e613023, 15-11-2019 16-14-2011-15-2019 16-14-21.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:20:03 PM</td>
+					<td class='step-details'>PDIAgr_Login, Financial page Solve for rates,Solve for installment are enabled and Fixrates checkbox is disabled as expected,  null, 15-11-2019 16-20-01</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:20:03 PM</td>
+					<td class='step-details'>PDIAgr_Login, Financial page Solve for rates,Solve for installment are enabled and Fixrates checkbox is disabled as expected,  null, 15-11-2019 16-20-01 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/PDIAgr_Login, Financial page Solve for rates,Solve for installment are enabled and Fixrates checkbox is disabled as expected,  null, 15-11-2019 16-20-0111-15-2019 16-20-03.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/PDIAgr_Login, Financial page Solve for rates,Solve for installment are enabled and Fixrates checkbox is disabled as expected,  null, 15-11-2019 16-20-0111-15-2019 16-20-03.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:20:06 PM</td>
+					<td class='step-details'>PDIAgr_Login, Advance amount verified is7000.00,  null, 15-11-2019 16-20-01</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:20:07 PM</td>
+					<td class='step-details'>PDIAgr_Login, Advance amount verified is7000.00,  null, 15-11-2019 16-20-01 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/PDIAgr_Login, Advance amount verified is7000.00,  null, 15-11-2019 16-20-0111-15-2019 16-20-07.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/PDIAgr_Login, Advance amount verified is7000.00,  null, 15-11-2019 16-20-0111-15-2019 16-20-07.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:20:12 PM</td>
+					<td class='step-details'>Esignpassevents, Status is displayed aseSign Docs Received,  eSign Docs Received, 15-11-2019 16-20-11</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:20:12 PM</td>
+					<td class='step-details'>Esignpassevents, Status is displayed aseSign Docs Received,  eSign Docs Received, 15-11-2019 16-20-11 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Esignpassevents, Status is displayed aseSign Docs Received,  eSign Docs Received, 15-11-2019 16-20-1111-15-2019 16-20-12.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Esignpassevents, Status is displayed aseSign Docs Received,  eSign Docs Received, 15-11-2019 16-20-1111-15-2019 16-20-12.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:20:13 PM</td>
+					<td class='step-details'>Esignpassevents, Plan is displayed aseSign Docs Received   (15-Nov-2019),  eSign Docs Received   (15-Nov-2019), 15-11-2019 16-20-11</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:20:13 PM</td>
+					<td class='step-details'>Esignpassevents, Plan is displayed aseSign Docs Received   (15-Nov-2019),  eSign Docs Received   (15-Nov-2019), 15-11-2019 16-20-11 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Esignpassevents, Plan is displayed aseSign Docs Received   (15-Nov-2019),  eSign Docs Received   (15-Nov-2019), 15-11-2019 16-20-1111-15-2019 16-20-13.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Esignpassevents, Plan is displayed aseSign Docs Received   (15-Nov-2019),  eSign Docs Received   (15-Nov-2019), 15-11-2019 16-20-1111-15-2019 16-20-13.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:20:19 PM</td>
+					<td class='step-details'>Agr_events_check, E-Signature Status ChangedGenerated,  KBA_PASS, 15-11-2019 16-20-19</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:20:20 PM</td>
+					<td class='step-details'>Agr_events_check, E-Signature Status ChangedGenerated,  KBA_PASS, 15-11-2019 16-20-19 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, E-Signature Status ChangedGenerated,  KBA_PASS, 15-11-2019 16-20-1911-15-2019 16-20-20.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, E-Signature Status ChangedGenerated,  KBA_PASS, 15-11-2019 16-20-1911-15-2019 16-20-20.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:20:20 PM</td>
+					<td class='step-details'>Agr_events_check, E-Signature Status ChangedGenerated,  DLCHECK_PASS, 15-11-2019 16-20-19</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:20:20 PM</td>
+					<td class='step-details'>Agr_events_check, E-Signature Status ChangedGenerated,  DLCHECK_PASS, 15-11-2019 16-20-19 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, E-Signature Status ChangedGenerated,  DLCHECK_PASS, 15-11-2019 16-20-1911-15-2019 16-20-20.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, E-Signature Status ChangedGenerated,  DLCHECK_PASS, 15-11-2019 16-20-1911-15-2019 16-20-20.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:20:20 PM</td>
+					<td class='step-details'>Agr_events_check, E-Signature Status ChangedGenerated,  ACCEPT, 15-11-2019 16-20-19</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:20:21 PM</td>
+					<td class='step-details'>Agr_events_check, E-Signature Status ChangedGenerated,  ACCEPT, 15-11-2019 16-20-19 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, E-Signature Status ChangedGenerated,  ACCEPT, 15-11-2019 16-20-1911-15-2019 16-20-21.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, E-Signature Status ChangedGenerated,  ACCEPT, 15-11-2019 16-20-1911-15-2019 16-20-21.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:20:21 PM</td>
+					<td class='step-details'>Agr_events_check, E-Signature Status ChangedGenerated,  REQUEST_PAYMENT, 15-11-2019 16-20-19</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:20:21 PM</td>
+					<td class='step-details'>Agr_events_check, E-Signature Status ChangedGenerated,  REQUEST_PAYMENT, 15-11-2019 16-20-19 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, E-Signature Status ChangedGenerated,  REQUEST_PAYMENT, 15-11-2019 16-20-1911-15-2019 16-20-21.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, E-Signature Status ChangedGenerated,  REQUEST_PAYMENT, 15-11-2019 16-20-1911-15-2019 16-20-21.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:20:21 PM</td>
+					<td class='step-details'>Agr_events_check, Additional Attribute AddedGenerated,  Dealflo Response Status -KBA_PASS, 15-11-2019 16-20-19</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:20:22 PM</td>
+					<td class='step-details'>Agr_events_check, Additional Attribute AddedGenerated,  Dealflo Response Status -KBA_PASS, 15-11-2019 16-20-19 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Additional Attribute AddedGenerated,  Dealflo Response Status -KBA_PASS, 15-11-2019 16-20-1911-15-2019 16-20-22.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Additional Attribute AddedGenerated,  Dealflo Response Status -KBA_PASS, 15-11-2019 16-20-1911-15-2019 16-20-22.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:20:22 PM</td>
+					<td class='step-details'>Agr_events_check, Additional Attribute ChangedGenerated,  Old value- KBA_PASS, New value- DLCHECK_PASS, 15-11-2019 16-20-19</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:20:22 PM</td>
+					<td class='step-details'>Agr_events_check, Additional Attribute ChangedGenerated,  Old value- KBA_PASS, New value- DLCHECK_PASS, 15-11-2019 16-20-19 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Additional Attribute ChangedGenerated,  Old value- KBA_PASS, New value- DLCHECK_PASS, 15-11-2019 16-20-1911-15-2019 16-20-22.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Additional Attribute ChangedGenerated,  Old value- KBA_PASS, New value- DLCHECK_PASS, 15-11-2019 16-20-1911-15-2019 16-20-22.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:20:22 PM</td>
+					<td class='step-details'>Agr_events_check, Additional Attribute ChangedGenerated,  Old value- DLCHECK_PASS, New value- ACCEPT, 15-11-2019 16-20-19</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:20:22 PM</td>
+					<td class='step-details'>Agr_events_check, Additional Attribute ChangedGenerated,  Old value- DLCHECK_PASS, New value- ACCEPT, 15-11-2019 16-20-19 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Additional Attribute ChangedGenerated,  Old value- DLCHECK_PASS, New value- ACCEPT, 15-11-2019 16-20-1911-15-2019 16-20-22.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Additional Attribute ChangedGenerated,  Old value- DLCHECK_PASS, New value- ACCEPT, 15-11-2019 16-20-1911-15-2019 16-20-22.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:20:23 PM</td>
+					<td class='step-details'>Agr_events_check, Additional Attribute ChangedGenerated,  Old value- ACCEPT, New value- REQUEST_PAYMENT, 15-11-2019 16-20-19</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:20:23 PM</td>
+					<td class='step-details'>Agr_events_check, Additional Attribute ChangedGenerated,  Old value- ACCEPT, New value- REQUEST_PAYMENT, 15-11-2019 16-20-19 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Additional Attribute ChangedGenerated,  Old value- ACCEPT, New value- REQUEST_PAYMENT, 15-11-2019 16-20-1911-15-2019 16-20-23.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Additional Attribute ChangedGenerated,  Old value- ACCEPT, New value- REQUEST_PAYMENT, 15-11-2019 16-20-1911-15-2019 16-20-23.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:20:31 PM</td>
+					<td class='step-details'>DocsReceived, Docs received is displayed without User/Date,  , 15-11-2019 16-20-23</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:20:32 PM</td>
+					<td class='step-details'>DocsReceived, Docs received is displayed without User/Date,  , 15-11-2019 16-20-23 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/DocsReceived, Docs received is displayed without User/Date,  , 15-11-2019 16-20-2311-15-2019 16-20-32.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/DocsReceived, Docs received is displayed without User/Date,  , 15-11-2019 16-20-2311-15-2019 16-20-32.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:20:36 PM</td>
+					<td class='step-details'>DocsReceived, MotorFrontEnd StatusDocs Received,  Docs Received, 15-11-2019 16-20-23</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:20:37 PM</td>
+					<td class='step-details'>DocsReceived, MotorFrontEnd StatusDocs Received,  Docs Received, 15-11-2019 16-20-23 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/DocsReceived, MotorFrontEnd StatusDocs Received,  Docs Received, 15-11-2019 16-20-2311-15-2019 16-20-37.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/DocsReceived, MotorFrontEnd StatusDocs Received,  Docs Received, 15-11-2019 16-20-2311-15-2019 16-20-37.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:20:39 PM</td>
+					<td class='step-details'>Agreement decision check successful Agreement_decision is    Docs Received</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:20:39 PM</td>
+					<td class='step-details'>Agreement decision check successful Agreement_decision is    Docs Received has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agreement decision check successful Agreement_decision is    Docs Received11-15-2019 16-20-39.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agreement decision check successful Agreement_decision is    Docs Received11-15-2019 16-20-39.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:20:47 PM</td>
+					<td class='step-details'>FirstcheckValidated, MotorFrontEnd Status 1st Check Validated,  1st Check Validated, 15-11-2019 16-20-39</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:20:47 PM</td>
+					<td class='step-details'>FirstcheckValidated, MotorFrontEnd Status 1st Check Validated,  1st Check Validated, 15-11-2019 16-20-39 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/FirstcheckValidated, MotorFrontEnd Status 1st Check Validated,  1st Check Validated, 15-11-2019 16-20-3911-15-2019 16-20-47.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/FirstcheckValidated, MotorFrontEnd Status 1st Check Validated,  1st Check Validated, 15-11-2019 16-20-3911-15-2019 16-20-47.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:20:51 PM</td>
+					<td class='step-details'>Agreement decision check successful Agreement_decision is    1st Check Validated</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:20:52 PM</td>
+					<td class='step-details'>Agreement decision check successful Agreement_decision is    1st Check Validated has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agreement decision check successful Agreement_decision is    1st Check Validated11-15-2019 16-20-52.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agreement decision check successful Agreement_decision is    1st Check Validated11-15-2019 16-20-52.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:20:53 PM</td>
+					<td class='step-details'>ConUNconfirmedSpecialterms, Special term content displayed as Confirmed special terms,  Confirm Special Terms, 15-11-2019 16-20-52</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:20:53 PM</td>
+					<td class='step-details'>ConUNconfirmedSpecialterms, Special term content displayed as Confirmed special terms,  Confirm Special Terms, 15-11-2019 16-20-52 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/ConUNconfirmedSpecialterms, Special term content displayed as Confirmed special terms,  Confirm Special Terms, 15-11-2019 16-20-5211-15-2019 16-20-53.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/ConUNconfirmedSpecialterms, Special term content displayed as Confirmed special terms,  Confirm Special Terms, 15-11-2019 16-20-5211-15-2019 16-20-53.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:20:58 PM</td>
+					<td class='step-details'>ConUNconfirmedSpecialterms, Special term content displayed as UnConfirmed special terms,  Unconfirm Special Terms, 15-11-2019 16-20-52</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:20:58 PM</td>
+					<td class='step-details'>ConUNconfirmedSpecialterms, Special term content displayed as UnConfirmed special terms,  Unconfirm Special Terms, 15-11-2019 16-20-52 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/ConUNconfirmedSpecialterms, Special term content displayed as UnConfirmed special terms,  Unconfirm Special Terms, 15-11-2019 16-20-5211-15-2019 16-20-58.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/ConUNconfirmedSpecialterms, Special term content displayed as UnConfirmed special terms,  Unconfirm Special Terms, 15-11-2019 16-20-5211-15-2019 16-20-58.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:21:00 PM</td>
+					<td class='step-details'>Agreement decision check successful Agreement_decision is    1st Check Validated</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:21:01 PM</td>
+					<td class='step-details'>Agreement decision check successful Agreement_decision is    1st Check Validated has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agreement decision check successful Agreement_decision is    1st Check Validated11-15-2019 16-21-01.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agreement decision check successful Agreement_decision is    1st Check Validated11-15-2019 16-21-01.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:21:25 PM</td>
+					<td class='step-details'>AwaitingDocsApproved, MotorFrontEnd StatusAwaiting Payout,  Awaiting Payout, 15-11-2019 16-21-01</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:21:26 PM</td>
+					<td class='step-details'>AwaitingDocsApproved, MotorFrontEnd StatusAwaiting Payout,  Awaiting Payout, 15-11-2019 16-21-01 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/AwaitingDocsApproved, MotorFrontEnd StatusAwaiting Payout,  Awaiting Payout, 15-11-2019 16-21-0111-15-2019 16-21-26.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/AwaitingDocsApproved, MotorFrontEnd StatusAwaiting Payout,  Awaiting Payout, 15-11-2019 16-21-0111-15-2019 16-21-26.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:21:28 PM</td>
+					<td class='step-details'>Agreement decision check successful Agreement_decision is    Awaiting Payout</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:21:28 PM</td>
+					<td class='step-details'>Agreement decision check successful Agreement_decision is    Awaiting Payout has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agreement decision check successful Agreement_decision is    Awaiting Payout11-15-2019 16-21-28.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agreement decision check successful Agreement_decision is    Awaiting Payout11-15-2019 16-21-28.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:21:42 PM</td>
+					<td class='step-details'>Agr_events_check, Additional Attribute AddedGenerated,  CP Special Terms confirmed-CHENNAI, 15-11-2019 16-21-42</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:21:43 PM</td>
+					<td class='step-details'>Agr_events_check, Additional Attribute AddedGenerated,  CP Special Terms confirmed-CHENNAI, 15-11-2019 16-21-42 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Additional Attribute AddedGenerated,  CP Special Terms confirmed-CHENNAI, 15-11-2019 16-21-4211-15-2019 16-21-43.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Additional Attribute AddedGenerated,  CP Special Terms confirmed-CHENNAI, 15-11-2019 16-21-4211-15-2019 16-21-43.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:21:43 PM</td>
+					<td class='step-details'>Agr_events_check, Additional Attribute AddedGenerated,  CP Advance-7000.00, 15-11-2019 16-21-42</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:21:43 PM</td>
+					<td class='step-details'>Agr_events_check, Additional Attribute AddedGenerated,  CP Advance-7000.00, 15-11-2019 16-21-42 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Additional Attribute AddedGenerated,  CP Advance-7000.00, 15-11-2019 16-21-4211-15-2019 16-21-43.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Additional Attribute AddedGenerated,  CP Advance-7000.00, 15-11-2019 16-21-4211-15-2019 16-21-43.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:21:43 PM</td>
+					<td class='step-details'>Agr_events_check, Additional Attribute AddedGenerated,  Balloon Value-0.00, 15-11-2019 16-21-42</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:21:44 PM</td>
+					<td class='step-details'>Agr_events_check, Additional Attribute AddedGenerated,  Balloon Value-0.00, 15-11-2019 16-21-42 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Additional Attribute AddedGenerated,  Balloon Value-0.00, 15-11-2019 16-21-4211-15-2019 16-21-44.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Additional Attribute AddedGenerated,  Balloon Value-0.00, 15-11-2019 16-21-4211-15-2019 16-21-44.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:21:44 PM</td>
+					<td class='step-details'>Agr_events_check, Additional Attribute AddedGenerated,  CP Document Fee-0.00, 15-11-2019 16-21-42</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:21:44 PM</td>
+					<td class='step-details'>Agr_events_check, Additional Attribute AddedGenerated,  CP Document Fee-0.00, 15-11-2019 16-21-42 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Additional Attribute AddedGenerated,  CP Document Fee-0.00, 15-11-2019 16-21-4211-15-2019 16-21-44.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Additional Attribute AddedGenerated,  CP Document Fee-0.00, 15-11-2019 16-21-4211-15-2019 16-21-44.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:21:44 PM</td>
+					<td class='step-details'>Agr_events_check, Additional Attribute AddedGenerated,  CP First Instalment-242.57, 15-11-2019 16-21-42</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:21:44 PM</td>
+					<td class='step-details'>Agr_events_check, Additional Attribute AddedGenerated,  CP First Instalment-242.57, 15-11-2019 16-21-42 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Additional Attribute AddedGenerated,  CP First Instalment-242.57, 15-11-2019 16-21-4211-15-2019 16-21-44.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Additional Attribute AddedGenerated,  CP First Instalment-242.57, 15-11-2019 16-21-4211-15-2019 16-21-44.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:21:44 PM</td>
+					<td class='step-details'>Agr_events_check, Additional Attribute AddedGenerated,  CP Checks Complete-Y, 15-11-2019 16-21-42</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:21:45 PM</td>
+					<td class='step-details'>Agr_events_check, Additional Attribute AddedGenerated,  CP Checks Complete-Y, 15-11-2019 16-21-42 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Additional Attribute AddedGenerated,  CP Checks Complete-Y, 15-11-2019 16-21-4211-15-2019 16-21-45.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Additional Attribute AddedGenerated,  CP Checks Complete-Y, 15-11-2019 16-21-4211-15-2019 16-21-45.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:21:45 PM</td>
+					<td class='step-details'>Agr_events_check, Additional Attribute AddedGenerated,  CP Agreement Source-Test, 15-11-2019 16-21-42</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:21:45 PM</td>
+					<td class='step-details'>Agr_events_check, Additional Attribute AddedGenerated,  CP Agreement Source-Test, 15-11-2019 16-21-42 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Additional Attribute AddedGenerated,  CP Agreement Source-Test, 15-11-2019 16-21-4211-15-2019 16-21-45.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Additional Attribute AddedGenerated,  CP Agreement Source-Test, 15-11-2019 16-21-4211-15-2019 16-21-45.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:21:45 PM</td>
+					<td class='step-details'>Agr_events_check, Agreement Status ChangedGenerated,  Accepted, 15-11-2019 16-21-42</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:21:46 PM</td>
+					<td class='step-details'>Agr_events_check, Agreement Status ChangedGenerated,  Accepted, 15-11-2019 16-21-42 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Agreement Status ChangedGenerated,  Accepted, 15-11-2019 16-21-4211-15-2019 16-21-46.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Agreement Status ChangedGenerated,  Accepted, 15-11-2019 16-21-4211-15-2019 16-21-46.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:21:46 PM</td>
+					<td class='step-details'>Agr_events_check, Agreement Status ChangedGenerated,  eSign Docs Received, 15-11-2019 16-21-42</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:21:46 PM</td>
+					<td class='step-details'>Agr_events_check, Agreement Status ChangedGenerated,  eSign Docs Received, 15-11-2019 16-21-42 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Agreement Status ChangedGenerated,  eSign Docs Received, 15-11-2019 16-21-4211-15-2019 16-21-46.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Agreement Status ChangedGenerated,  eSign Docs Received, 15-11-2019 16-21-4211-15-2019 16-21-46.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:21:46 PM</td>
+					<td class='step-details'>Agr_events_check, Agreement Status ChangedGenerated,  1st Check Validated, 15-11-2019 16-21-42</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:21:47 PM</td>
+					<td class='step-details'>Agr_events_check, Agreement Status ChangedGenerated,  1st Check Validated, 15-11-2019 16-21-42 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Agreement Status ChangedGenerated,  1st Check Validated, 15-11-2019 16-21-4211-15-2019 16-21-47.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Agreement Status ChangedGenerated,  1st Check Validated, 15-11-2019 16-21-4211-15-2019 16-21-47.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:21:47 PM</td>
+					<td class='step-details'>Agr_events_check, Agreement Status ChangedGenerated,  Awaiting Payout, 15-11-2019 16-21-42</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:21:47 PM</td>
+					<td class='step-details'>Agr_events_check, Agreement Status ChangedGenerated,  Awaiting Payout, 15-11-2019 16-21-42 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Agreement Status ChangedGenerated,  Awaiting Payout, 15-11-2019 16-21-4211-15-2019 16-21-47.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Agreement Status ChangedGenerated,  Awaiting Payout, 15-11-2019 16-21-4211-15-2019 16-21-47.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:21:47 PM</td>
+					<td class='step-details'>Agr_events_check, Agreement ActivatedGenerated,  Agreement Activated, 15-11-2019 16-21-42</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:21:48 PM</td>
+					<td class='step-details'>Agr_events_check, Agreement ActivatedGenerated,  Agreement Activated, 15-11-2019 16-21-42 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Agreement ActivatedGenerated,  Agreement Activated, 15-11-2019 16-21-4211-15-2019 16-21-48.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agr_events_check, Agreement ActivatedGenerated,  Agreement Activated, 15-11-2019 16-21-4211-15-2019 16-21-48.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:21:58 PM</td>
+					<td class='step-details'>Payoutgolive, MotorFrontEnd StatusAccepted and Paid,  Accepted and Paid, 15-11-2019 16-21-28</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:21:58 PM</td>
+					<td class='step-details'>Payoutgolive, MotorFrontEnd StatusAccepted and Paid,  Accepted and Paid, 15-11-2019 16-21-28 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Payoutgolive, MotorFrontEnd StatusAccepted and Paid,  Accepted and Paid, 15-11-2019 16-21-2811-15-2019 16-21-58.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Payoutgolive, MotorFrontEnd StatusAccepted and Paid,  Accepted and Paid, 15-11-2019 16-21-2811-15-2019 16-21-58.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:21:59 PM</td>
+					<td class='step-details'>Agreement decision check successful Agreement_decision is    Accepted and Paid</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:22:00 PM</td>
+					<td class='step-details'>Agreement decision check successful Agreement_decision is    Accepted and Paid has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/Agreement decision check successful Agreement_decision is    Accepted and Paid11-15-2019 16-22-00.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/Agreement decision check successful Agreement_decision is    Accepted and Paid11-15-2019 16-22-00.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:22:12 PM</td>
+					<td class='step-details'>BO_Login</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:22:12 PM</td>
+					<td class='step-details'>BO_Login has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/BO_Login11-15-2019 16-22-12.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/BO_Login11-15-2019 16-22-12.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:22:12 PM</td>
+					<td class='step-details'>BO_Status_check</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:22:13 PM</td>
+					<td class='step-details'>BO_Status_check has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/BO_Status_check11-15-2019 16-22-13.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/BO_Status_check11-15-2019 16-22-13.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:23:21 PM</td>
+					<td class='step-details'>BO_Status_check, Backoffice Status is Active,  null, 15-11-2019 16-22-12</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:23:21 PM</td>
+					<td class='step-details'>BO_Status_check, Backoffice Status is Active,  null, 15-11-2019 16-22-12 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/BO_Status_check, Backoffice Status is Active,  null, 15-11-2019 16-22-1211-15-2019 16-23-21.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/BO_Status_check, Backoffice Status is Active,  null, 15-11-2019 16-22-1211-15-2019 16-23-21.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:23:37 PM</td>
+					<td class='step-details'>BO_Status_check, Backoffice Instalamt verified242.57,  null, 15-11-2019 16-22-12</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:23:37 PM</td>
+					<td class='step-details'>BO_Status_check, Backoffice Instalamt verified242.57,  null, 15-11-2019 16-22-12 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/BO_Status_check, Backoffice Instalamt verified242.57,  null, 15-11-2019 16-22-1211-15-2019 16-23-37.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/BO_Status_check, Backoffice Instalamt verified242.57,  null, 15-11-2019 16-22-1211-15-2019 16-23-37.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:24:37 PM</td>
+					<td class='step-details'>BO_Status_check, Trace score of an agreement is greater than 50,  100, 15-11-2019 16-22-12</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:24:38 PM</td>
+					<td class='step-details'>BO_Status_check, Trace score of an agreement is greater than 50,  100, 15-11-2019 16-22-12 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/BO_Status_check, Trace score of an agreement is greater than 50,  100, 15-11-2019 16-22-1211-15-2019 16-24-38.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/BO_Status_check, Trace score of an agreement is greater than 50,  100, 15-11-2019 16-22-1211-15-2019 16-24-38.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:24:58 PM</td>
+					<td class='step-details'>BoCallvalidateresponse</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:24:58 PM</td>
+					<td class='step-details'>BoCallvalidateresponse has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/BoCallvalidateresponse11-15-2019 16-24-58.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/BoCallvalidateresponse11-15-2019 16-24-58.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:25:50 PM</td>
+					<td class='step-details'>BoCallvalidateresponse, CallCredit Affordability check response is generated,  null, 15-11-2019 16-24-58</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:25:50 PM</td>
+					<td class='step-details'>BoCallvalidateresponse, CallCredit Affordability check response is generated,  null, 15-11-2019 16-24-58 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/BoCallvalidateresponse, CallCredit Affordability check response is generated,  null, 15-11-2019 16-24-5811-15-2019 16-25-50.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/BoCallvalidateresponse, CallCredit Affordability check response is generated,  null, 15-11-2019 16-24-5811-15-2019 16-25-50.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:26:32 PM</td>
+					<td class='step-details'>BoCallvalidateresponse, CallCredit Affordability check response is generated,  null, 15-11-2019 16-24-58</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:26:32 PM</td>
+					<td class='step-details'>BoCallvalidateresponse, CallCredit Affordability check response is generated,  null, 15-11-2019 16-24-58 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/BoCallvalidateresponse, CallCredit Affordability check response is generated,  null, 15-11-2019 16-24-5811-15-2019 16-26-32.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/BoCallvalidateresponse, CallCredit Affordability check response is generated,  null, 15-11-2019 16-24-5811-15-2019 16-26-32.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>4:27:09 PM</td>
+					<td class='step-details'>BoCallvalidateresponse, Dealflo VHub ID And Bank parsed response is generated,  null, 15-11-2019 16-24-58</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>4:27:09 PM</td>
+					<td class='step-details'>BoCallvalidateresponse, Dealflo VHub ID And Bank parsed response is generated,  null, 15-11-2019 16-24-58 has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Startline/Screnshots/BoCallvalidateresponse, Dealflo VHub ID And Bank parsed response is generated,  null, 15-11-2019 16-24-5811-15-2019 16-27-09.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Startline/Screnshots/BoCallvalidateresponse, Dealflo VHub ID And Bank parsed response is generated,  null, 15-11-2019 16-24-5811-15-2019 16-27-09.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='test-name'></h5>
+
+			<div id='step-filters' class="right">
+				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			</div>
+		</div>
+	</div>
+	<!-- subview right -->
+
+</div>
+<!-- test view --><!-- category view --><!-- exception view --><div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Tests
+					<div class='panel-lead'>1</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>198</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Nov 15, 2019 4:10:10 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Nov 15, 2019 4:27:09 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>1,019,723ms</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view --><!-- testrunner-logs view -->
+		</div>
+		<!-- container -->
+
+		<script>
+			var statusGroup = {
+				passParent: 1,
+				failParent: 0,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 0,
+				
+				passChild: 99,
+				failChild: 0,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 99,
+				exceptionsChild: 0,
+				
+				passGrandChild: 0,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				exceptionsGrandChild: 0,
+			};
+		</script>
+		
+			<script src='https://cdn.rawgit.com/anshooarora/extentreports-java/9fa70d0ed9c34a8ed445ceee3494d3d7de7f8918/dist/js/extent.js' type='text/javascript'></script>
+		
+		
+	</body>
+	
+</html>

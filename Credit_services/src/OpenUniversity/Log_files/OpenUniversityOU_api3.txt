@@ -1,0 +1,2 @@
+Nov 06, 2019 7:12:03 AM Common_Funtions.Utilities log_file
+INFO: java.lang.NullPointerException

@@ -1,0 +1,3144 @@
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset='utf-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	
+		<link href='https://cdn.rawgit.com/anshooarora/extentreports-java/9fa70d0ed9c34a8ed445ceee3494d3d7de7f8918/dist/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>ExtentReports</title>
+
+</head>
+	<body class='extent standard default hide-overflow '>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo blue darken-3">Extent</a>
+
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+		</ul>
+
+		<!-- report name -->
+		<span class='report-name'>ExtentReports</span>
+		
+		<!-- report headline -->
+		<span class='report-headline'></span>
+
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<a href='#!'>
+				<span class='label suite-start-time'>Dec 20, 2019 1:48:20 PM</span>
+			</a>
+			<a href='#!'>
+				<span class='label'>v3.0.3</span>
+			</a>
+		</ul>
+	</div>
+</nav>
+		<!-- container -->
+		<div class='container'>
+
+<div id='test-view' class='view'>
+				
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+					<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+						<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+
+			<!-- category toggle -->
+			<!-- category toggle -->
+
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+					<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+					<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+					<i class='material-icons'>search</i> Search
+				</a>
+
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+				
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+
+
+<div id='test-view-charts' class='subview-full'>
+	<div id='charts-row' class='row nm-v nm-h'>
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Tests</div>
+				<div class='chart-box'>
+					<canvas id='parent-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span><span class='strong'>56</span> test(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong'>3</span> test(s) failed, <span class='strong'>0</span> others
+				</div>
+			</div>
+		</div>
+		
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Steps</div>
+				<div class='chart-box'>
+					<canvas id='child-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span><span class='strong'>108</span> step(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong'>6</span> step(s) failed, <span class='strong'>111</span> others
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+
+	<div class='subview-left left'>
+		
+		<div class='view-summary'>
+			<h5>Tests</h3>
+			<ul id='test-collection' class='test-collection'>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR3_TC03,TC28_1</span>
+						<span class='test-time'>Dec 20, 2019 1:48:20 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 1:48:20 PM</span>
+	<span class='label end-time'>Dec 20, 2019 1:48:42 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 22s+0ms</span>
+</div>
+	<div class='test-desc'>Verify that when the payment day chosen for a new monthly product agreement falls such that the next occurrence is exactly 28 days after agreement start date - where the agreement is activated immediately - the first due date is set to the next occurrence of the payment day. </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:48:34 PM</td>
+					<td class='step-details'>Project_ToRun</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:48:34 PM</td>
+					<td class='step-details'>Project_ToRun has executed successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:48:42 PM</td>
+					<td class='step-details'>Agreement has successfully created</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:48:42 PM</td>
+					<td class='step-details'>Agreement has successfully created has executed successfully</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='2'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR4_TC04_1</span>
+						<span class='test-time'>Dec 20, 2019 1:48:42 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 1:48:42 PM</span>
+	<span class='label end-time'>Dec 20, 2019 1:49:01 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 18s+686ms</span>
+</div>
+	<div class='test-desc'>Esigning a new monthly product agreement causes it to be updated to be 'signed'. The status is set to 'Proposal, Conditional Accept'. The agreement signed date is updated to be the current system date. </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:48:53 PM</td>
+					<td class='step-details'>Project_ToRun</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:48:53 PM</td>
+					<td class='step-details'>Project_ToRun has executed successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:49:01 PM</td>
+					<td class='step-details'>Agreement has successfully created</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:49:01 PM</td>
+					<td class='step-details'>Agreement has successfully created has executed successfully</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='3'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR5_TC05_1</span>
+						<span class='test-time'>Dec 20, 2019 1:49:01 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 1:49:01 PM</span>
+	<span class='label end-time'>Dec 20, 2019 1:49:30 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 29s+464ms</span>
+</div>
+	<div class='test-desc'>Verify that an application for a new monthly product loan of £670 and term of 7 months for a new customer adds all the customer details specified into the Pancredit system. The interest rates used for the agreement are as specified for that loan amount and term combination for the product and the nominal code ISP907 is used for transactions posted to the agreement. </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:49:22 PM</td>
+					<td class='step-details'>Project_ToRun</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:49:22 PM</td>
+					<td class='step-details'>Project_ToRun has executed successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:49:30 PM</td>
+					<td class='step-details'>Agreement has successfully created</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:49:30 PM</td>
+					<td class='step-details'>Agreement has successfully created has executed successfully</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='4'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR6_TC06_1</span>
+						<span class='test-time'>Dec 20, 2019 1:49:30 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 1:49:30 PM</span>
+	<span class='label end-time'>Dec 20, 2019 1:49:56 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 25s+847ms</span>
+</div>
+	<div class='test-desc'>Verify that an application for a new monthly product loan of £1000 and term of 8 months for an existing customer uses the existing customer details specified into the Pancredit system, updating income and expenditure fields that have changed. </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:49:48 PM</td>
+					<td class='step-details'>Project_ToRun</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:49:48 PM</td>
+					<td class='step-details'>Project_ToRun has executed successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:49:56 PM</td>
+					<td class='step-details'>Agreement has successfully created</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:49:56 PM</td>
+					<td class='step-details'>Agreement has successfully created has executed successfully</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='5'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR7_TC07_1</span>
+						<span class='test-time'>Dec 20, 2019 1:49:56 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 1:49:56 PM</span>
+	<span class='label end-time'>Dec 20, 2019 1:50:17 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 20s+787ms</span>
+</div>
+	<div class='test-desc'>Verify that an application for a new monthly product loan of £1250 and term of 9 months for a new customer adds all the customer details specified into the Pancredit system. </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:50:08 PM</td>
+					<td class='step-details'>Project_ToRun</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:50:08 PM</td>
+					<td class='step-details'>Project_ToRun has executed successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:50:17 PM</td>
+					<td class='step-details'>Agreement has successfully created</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:50:17 PM</td>
+					<td class='step-details'>Agreement has successfully created has executed successfully</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='6'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR8_TC08_1</span>
+						<span class='test-time'>Dec 20, 2019 1:50:17 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 1:50:17 PM</span>
+	<span class='label end-time'>Dec 20, 2019 1:50:37 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 19s+624ms</span>
+</div>
+	<div class='test-desc'>Verify that an application for a new monthly product loan of £1500 and term of 10 months for an existing customer uses the existing customer details specified into the Pancredit system, updating loan and credit card existence fields which have changed. </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:50:28 PM</td>
+					<td class='step-details'>Project_ToRun</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:50:28 PM</td>
+					<td class='step-details'>Project_ToRun has executed successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:50:37 PM</td>
+					<td class='step-details'>Agreement has successfully created</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:50:37 PM</td>
+					<td class='step-details'>Agreement has successfully created has executed successfully</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='7'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR9_TC09_1</span>
+						<span class='test-time'>Dec 20, 2019 1:50:37 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 1:50:37 PM</span>
+	<span class='label end-time'>Dec 20, 2019 1:51:17 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 39s+695ms</span>
+</div>
+	<div class='test-desc'>Verify that an application for a new monthly product loan of £1720 and term of 11 months for a new customer adds all the customer details specified into the Pancredit system. </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:50:48 PM</td>
+					<td class='step-details'>Project_ToRun</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:50:48 PM</td>
+					<td class='step-details'>Project_ToRun has executed successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:51:17 PM</td>
+					<td class='step-details'>Agreement has successfully created</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:51:17 PM</td>
+					<td class='step-details'>Agreement has successfully created has executed successfully</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='8'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR10_TC10,TC33_1</span>
+						<span class='test-time'>Dec 20, 2019 1:51:17 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 1:51:17 PM</span>
+	<span class='label end-time'>Dec 20, 2019 1:51:41 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 23s+443ms</span>
+</div>
+	<div class='test-desc'>Verify that an application for a new monthly product loan of £2000.00 and term of 12 months for an existing customer uses the existing customer details specified into the Pancredit system. </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:51:34 PM</td>
+					<td class='step-details'>Project_ToRun</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:51:34 PM</td>
+					<td class='step-details'>Project_ToRun has executed successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:51:41 PM</td>
+					<td class='step-details'>Agreement has successfully created</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:51:41 PM</td>
+					<td class='step-details'>Agreement has successfully created has executed successfully</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='9'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR11_TC27_1</span>
+						<span class='test-time'>Dec 20, 2019 1:51:41 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 1:51:41 PM</span>
+	<span class='label end-time'>Dec 20, 2019 1:51:58 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 16s+622ms</span>
+</div>
+	<div class='test-desc'>Verify that when the payment day chosen for a new monthly product agreement falls such that the next occurrence is less than 28 days after agreement start date - where the agreement is activated immediately - the first due date is moved to the payment day specified in the following month. </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:51:51 PM</td>
+					<td class='step-details'>Project_ToRun</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:51:51 PM</td>
+					<td class='step-details'>Project_ToRun has executed successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:51:58 PM</td>
+					<td class='step-details'>Agreement has successfully created</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:51:58 PM</td>
+					<td class='step-details'>Agreement has successfully created has executed successfully</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='10'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR12_TC28_1</span>
+						<span class='test-time'>Dec 20, 2019 1:51:58 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 1:51:58 PM</span>
+	<span class='label end-time'>Dec 20, 2019 1:52:16 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 17s+544ms</span>
+</div>
+	<div class='test-desc'>Verify that when the payment day chosen for a new monthly product agreement falls such that the next occurrence is exactly 28 days after agreement start date - where the agreement is activated immediately - the first due date is set to the next occurrence of the payment day. </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:52:08 PM</td>
+					<td class='step-details'>Project_ToRun</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:52:08 PM</td>
+					<td class='step-details'>Project_ToRun has executed successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:52:16 PM</td>
+					<td class='step-details'>Agreement has successfully created</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:52:16 PM</td>
+					<td class='step-details'>Agreement has successfully created has executed successfully</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='11'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR13_TC29_1</span>
+						<span class='test-time'>Dec 20, 2019 1:52:16 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 1:52:16 PM</span>
+	<span class='label end-time'>Dec 20, 2019 1:52:37 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 20s+799ms</span>
+</div>
+	<div class='test-desc'>Verify that when the payment day chosen for a new monthly product agreement falls such that the next occurrence is more than 28 days after agreement start date - where the agreement is activated immediately - the first due date is set to the next occurrence of the payment day. </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:52:28 PM</td>
+					<td class='step-details'>Project_ToRun</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:52:28 PM</td>
+					<td class='step-details'>Project_ToRun has executed successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:52:37 PM</td>
+					<td class='step-details'>Agreement has successfully created</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:52:37 PM</td>
+					<td class='step-details'>Agreement has successfully created has executed successfully</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='12'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR14_TC30_1</span>
+						<span class='test-time'>Dec 20, 2019 1:52:38 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 1:52:38 PM</span>
+	<span class='label end-time'>Dec 20, 2019 1:52:47 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 9s+161ms</span>
+</div>
+	<div class='test-desc'>Verify that when activation of an agreement is delayed and the payment day initially chosen for a new monthly product agreement now falls such that the next occurrence is less than 28 days after agreement start date - the first due date is moved to the payment day specified in the following month. </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:52:47 PM</td>
+					<td class='step-details'>Project_ToRun</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:52:47 PM</td>
+					<td class='step-details'>Project_ToRun has executed successfully</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='13'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR15_TC31_1</span>
+						<span class='test-time'>Dec 20, 2019 1:52:53 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 1:52:53 PM</span>
+	<span class='label end-time'>Dec 20, 2019 1:53:02 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 8s+661ms</span>
+</div>
+	<div class='test-desc'>Verify that when activation of an agreement is delayed and the payment day initially chosen for a new monthly product agreement now falls such that the next occurrence is exactly 28 days after agreement start date - the first due date is set to the next occurrence of the payment day. </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:53:02 PM</td>
+					<td class='step-details'>Project_ToRun</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:53:02 PM</td>
+					<td class='step-details'>Project_ToRun has executed successfully</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='14'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR16_TC32_1</span>
+						<span class='test-time'>Dec 20, 2019 1:53:06 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 1:53:06 PM</span>
+	<span class='label end-time'>Dec 20, 2019 1:53:20 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 13s+791ms</span>
+</div>
+	<div class='test-desc'>Verify that when activation of an agreement is delayed and the payment day initially chosen for a new monthly product agreement now falls such that the next occurrence is more than 28 days after agreement start date - the first due date is set to the next occurrence of the payment day. </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:53:13 PM</td>
+					<td class='step-details'>Project_ToRun</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:53:13 PM</td>
+					<td class='step-details'>Project_ToRun has executed successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:53:20 PM</td>
+					<td class='step-details'>Agreement has successfully created</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:53:20 PM</td>
+					<td class='step-details'>Agreement has successfully created has executed successfully</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='15'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR17_TC34_1</span>
+						<span class='test-time'>Dec 20, 2019 1:53:21 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 1:53:21 PM</span>
+	<span class='label end-time'>Dec 20, 2019 1:53:35 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 14s+287ms</span>
+</div>
+	<div class='test-desc'>Verify that where a payment day of '28' is selected in the Application request for a new monthly product agreement and the First Payment Due Date calculated is 28th February, the payment schedule created for the agreement is not created with scheduled payment dates on the last day of the month (post February). </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:53:28 PM</td>
+					<td class='step-details'>Project_ToRun</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:53:28 PM</td>
+					<td class='step-details'>Project_ToRun has executed successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:53:35 PM</td>
+					<td class='step-details'>Agreement has successfully created</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:53:35 PM</td>
+					<td class='step-details'>Agreement has successfully created has executed successfully</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='16'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR18_TC38_1</span>
+						<span class='test-time'>Dec 20, 2019 1:53:36 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 1:53:36 PM</span>
+	<span class='label end-time'>Dec 20, 2019 1:53:58 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 21s+989ms</span>
+</div>
+	<div class='test-desc'>Verify that if a new monthly agreement has not been esigned it cannot be activated using the 'Accept' decision option. </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:53:52 PM</td>
+					<td class='step-details'>Project_ToRun</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:53:52 PM</td>
+					<td class='step-details'>Project_ToRun has executed successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:53:58 PM</td>
+					<td class='step-details'>Agreement has Referred status</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:53:58 PM</td>
+					<td class='step-details'>Agreement has Referred status has executed successfully</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='17'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR19_TC43_1</span>
+						<span class='test-time'>Dec 20, 2019 1:53:59 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 1:53:59 PM</span>
+	<span class='label end-time'>Dec 20, 2019 1:54:18 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 19s+366ms</span>
+</div>
+	<div class='test-desc'>Verify that an esigned new monthly product agreement can be updated with a 'referred' decision. This will make the agreement 'Proposal, Referred'. </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:54:08 PM</td>
+					<td class='step-details'>Project_ToRun</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:54:08 PM</td>
+					<td class='step-details'>Project_ToRun has executed successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:54:18 PM</td>
+					<td class='step-details'>Agreement has successfully created</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:54:18 PM</td>
+					<td class='step-details'>Agreement has successfully created has executed successfully</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='18'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR19_TC46_1</span>
+						<span class='test-time'>Dec 20, 2019 1:54:19 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 1:54:19 PM</span>
+	<span class='label end-time'>Dec 20, 2019 1:54:48 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 29s+127ms</span>
+</div>
+	<div class='test-desc'>Verify that an agreement arranged on the new monthly product which has been 'referred' can be updated with an 'accepted' decision. This will make the agreement 'Active'. </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:54:21 PM</td>
+					<td class='step-details'>Agreement has successfully created</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:54:21 PM</td>
+					<td class='step-details'>Agreement has successfully created has executed successfully</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:54:25 PM</td>
+					<td class='step-details'>IntiateBrowser</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:54:26 PM</td>
+					<td class='step-details'>IntiateBrowser has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/IntiateBrowser12-20-2019 13-54-26.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/IntiateBrowser12-20-2019 13-54-26.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:54:34 PM</td>
+					<td class='step-details'>BO_Login</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:54:34 PM</td>
+					<td class='step-details'>BO_Login has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Login12-20-2019 13-54-34.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Login12-20-2019 13-54-34.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:54:48 PM</td>
+					<td class='step-details'>BO_Status_check</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:54:48 PM</td>
+					<td class='step-details'>BO_Status_check has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 13-54-48.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 13-54-48.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='19'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR20_TC45_1</span>
+						<span class='test-time'>Dec 20, 2019 1:54:53 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 1:54:53 PM</span>
+	<span class='label end-time'>Dec 20, 2019 1:55:14 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 21s+660ms</span>
+</div>
+	<div class='test-desc'>Verify that an esigned agreement can be updated with a 'declined' decision. This will make the agreement 'Rejected'. </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:55:03 PM</td>
+					<td class='step-details'>BO_Status_check</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:55:03 PM</td>
+					<td class='step-details'>BO_Status_check has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 13-55-03.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 13-55-03.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:55:14 PM</td>
+					<td class='step-details'>Agreement has successfully created</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:55:14 PM</td>
+					<td class='step-details'>Agreement has successfully created has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 13-55-14.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 13-55-14.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='20'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR21_TC48_1</span>
+						<span class='test-time'>Dec 20, 2019 1:55:15 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 1:55:15 PM</span>
+	<span class='label end-time'>Dec 20, 2019 1:55:35 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 19s+333ms</span>
+</div>
+	<div class='test-desc'>Verify that an agreement arranged on the new monthly product which has been 'referred' can be updated with an 'declined' decision. This will make the agreement 'Rejected'. </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:55:25 PM</td>
+					<td class='step-details'>BO_Status_check</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:55:25 PM</td>
+					<td class='step-details'>BO_Status_check has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 13-55-25.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 13-55-25.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:55:34 PM</td>
+					<td class='step-details'>Agreement has successfully created</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:55:35 PM</td>
+					<td class='step-details'>Agreement has successfully created has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 13-55-35.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 13-55-35.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='21'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR21_TC48_2</span>
+						<span class='test-time'>Dec 20, 2019 1:55:36 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 1:55:36 PM</span>
+	<span class='label end-time'>Dec 20, 2019 1:55:38 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 2s+267ms</span>
+</div>
+	<div class='test-desc'>Verify that an agreement arranged on the new monthly product which has been 'referred' can be updated with an 'declined' decision. This will make the agreement 'Rejected'. </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:55:37 PM</td>
+					<td class='step-details'>Agreement has successfully created</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:55:38 PM</td>
+					<td class='step-details'>Agreement has successfully created has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 13-55-38.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 13-55-38.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='22'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR22_1</span>
+						<span class='test-time'>Dec 20, 2019 1:55:39 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 1:55:39 PM</span>
+	<span class='label end-time'>Dec 20, 2019 1:56:13 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 34s+173ms</span>
+</div>
+	<div class='test-desc'>Creating a new Agreement </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:55:47 PM</td>
+					<td class='step-details'>BO_Status_check</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:55:47 PM</td>
+					<td class='step-details'>BO_Status_check has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 13-55-47.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 13-55-47.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:56:13 PM</td>
+					<td class='step-details'>Agreement has successfully created</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:56:13 PM</td>
+					<td class='step-details'>Agreement has successfully created has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 13-56-13.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 13-56-13.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='23'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR23_1</span>
+						<span class='test-time'>Dec 20, 2019 1:56:14 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 1:56:14 PM</span>
+	<span class='label end-time'>Dec 20, 2019 1:56:41 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 27s+120ms</span>
+</div>
+	<div class='test-desc'>Creating a new Agreement </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:56:32 PM</td>
+					<td class='step-details'>BO_Status_check</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:56:32 PM</td>
+					<td class='step-details'>BO_Status_check has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 13-56-32.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 13-56-32.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:56:41 PM</td>
+					<td class='step-details'>Agreement has successfully created</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:56:41 PM</td>
+					<td class='step-details'>Agreement has successfully created has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 13-56-41.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 13-56-41.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='24'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR24_TC39_1</span>
+						<span class='test-time'>Dec 20, 2019 1:56:42 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 1:56:42 PM</span>
+	<span class='label end-time'>Dec 20, 2019 1:57:22 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 39s+157ms</span>
+</div>
+	<div class='test-desc'>Esigning a weekly product agreement causes it to be updated to be 'signed'. The status is set to 'Proposal, Conditional Accept'. The agreement signed date is updated to be the current system date. </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:56:53 PM</td>
+					<td class='step-details'>BO_Status_check</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:56:53 PM</td>
+					<td class='step-details'>BO_Status_check has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 13-56-53.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 13-56-53.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:57:07 PM</td>
+					<td class='step-details'>BO_Login</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:57:07 PM</td>
+					<td class='step-details'>BO_Login has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Login12-20-2019 13-57-07.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Login12-20-2019 13-57-07.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:57:21 PM</td>
+					<td class='step-details'>BO_Status_check</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:57:22 PM</td>
+					<td class='step-details'>BO_Status_check has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 13-57-22.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 13-57-22.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='25'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR24_TC11_1</span>
+						<span class='test-time'>Dec 20, 2019 1:57:26 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 1:57:26 PM</span>
+	<span class='label end-time'>Dec 20, 2019 1:57:28 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 2s+54ms</span>
+</div>
+	<div class='test-desc'>Verify that an application for a weekly product loan of £510 and term of 13 weeks for a new customer adds all the customer details specified into the Pancredit system. </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:57:28 PM</td>
+					<td class='step-details'>Agreement has successfully created</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:57:28 PM</td>
+					<td class='step-details'>Agreement has successfully created has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 13-57-28.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 13-57-28.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='26'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR24_TC35_1</span>
+						<span class='test-time'>Dec 20, 2019 1:57:30 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 1:57:30 PM</span>
+	<span class='label end-time'>Dec 20, 2019 1:57:34 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 3s+917ms</span>
+</div>
+	<div class='test-desc'>Verify that the first payment due date for a weekly agreement that is activated immediately is calculated using First Payment Date specified in the Application request </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:57:33 PM</td>
+					<td class='step-details'>BO_Status_check Initiated</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>1:57:34 PM</td>
+					<td class='step-details'>BO_Status_check has failed find the below Screenshot<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 13-57-34.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 13-57-34.png'></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>1:57:34 PM</td>
+					<td class='step-details'>Agreement Creation in API has Failed</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='27'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR25_TC42,TC12_1</span>
+						<span class='test-time'>Dec 20, 2019 1:57:35 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 1:57:35 PM</span>
+	<span class='label end-time'>Dec 20, 2019 1:57:53 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 17s+698ms</span>
+</div>
+	<div class='test-desc'>Verify that an esigned weekly product agreement can be updated with an 'accepted' decision. This will make the agreement 'Active'. </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:57:43 PM</td>
+					<td class='step-details'>BO_Status_check</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:57:43 PM</td>
+					<td class='step-details'>BO_Status_check has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 13-57-43.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 13-57-43.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:57:52 PM</td>
+					<td class='step-details'>Agreement has successfully created</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:57:53 PM</td>
+					<td class='step-details'>Agreement has successfully created has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 13-57-53.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 13-57-53.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='28'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR26_TC13_1</span>
+						<span class='test-time'>Dec 20, 2019 1:57:54 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 1:57:54 PM</span>
+	<span class='label end-time'>Dec 20, 2019 1:58:12 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 17s+787ms</span>
+</div>
+	<div class='test-desc'>Verify that an application for a weekly product loan of £530 and term of 39 weeks for a new customer adds all the customer details specified into the Pancredit system </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:58:02 PM</td>
+					<td class='step-details'>BO_Status_check</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:58:03 PM</td>
+					<td class='step-details'>BO_Status_check has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 13-58-03.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 13-58-03.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:58:12 PM</td>
+					<td class='step-details'>Agreement has successfully created</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:58:12 PM</td>
+					<td class='step-details'>Agreement has successfully created has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 13-58-12.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 13-58-12.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='29'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR27_TC14_1</span>
+						<span class='test-time'>Dec 20, 2019 1:58:13 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 1:58:13 PM</span>
+	<span class='label end-time'>Dec 20, 2019 1:58:15 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+488ms</span>
+</div>
+	<div class='test-desc'>Verify that an application for a weekly product loan of £2000 and term of 52 weeks for a new customer adds all the customer details specified into the Pancredit system. </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:58:15 PM</td>
+					<td class='step-details'>BO_Status_check Initiated</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>1:58:15 PM</td>
+					<td class='step-details'>BO_Status_check has failed find the below Screenshot<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 13-58-15.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 13-58-15.png'></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>1:58:15 PM</td>
+					<td class='step-details'>Person ID not created</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='30'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR28_TC40_1</span>
+						<span class='test-time'>Dec 20, 2019 1:58:16 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 1:58:16 PM</span>
+	<span class='label end-time'>Dec 20, 2019 1:58:37 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 20s+896ms</span>
+</div>
+	<div class='test-desc'>Verify that if a weekly agreement has not been esigned it cannot be activated using the 'Accept' decision option. </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:58:30 PM</td>
+					<td class='step-details'>BO_Status_check</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:58:30 PM</td>
+					<td class='step-details'>BO_Status_check has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 13-58-30.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 13-58-30.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:58:37 PM</td>
+					<td class='step-details'>Agreement has Referred status</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:58:37 PM</td>
+					<td class='step-details'>Agreement has Referred status has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has Referred status12-20-2019 13-58-37.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has Referred status12-20-2019 13-58-37.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='31'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR28_TC40_2</span>
+						<span class='test-time'>Dec 20, 2019 1:58:39 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 1:58:39 PM</span>
+	<span class='label end-time'>Dec 20, 2019 1:58:46 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 6s+796ms</span>
+</div>
+	<div class='test-desc'>Verify that if a weekly agreement has not been esigned it cannot be activated using the 'Accept' decision option. </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:58:43 PM</td>
+					<td class='step-details'>BO_Status_check Initiated</td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>1:58:44 PM</td>
+					<td class='step-details'>BO_Status_check has failed find the below Screenshot<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 13-58-44.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 13-58-44.png'></td>
+				</tr>
+				<tr class='log' status='fail'>
+					<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+					<td class='timestamp'>1:58:44 PM</td>
+					<td class='step-details'>updateAgreementstatus has not displaying as expected</td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:58:45 PM</td>
+					<td class='step-details'>Agreement has Referred status</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:58:46 PM</td>
+					<td class='step-details'>Agreement has Referred status has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has Referred status12-20-2019 13-58-46.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has Referred status12-20-2019 13-58-46.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='32'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR29_TC44_1</span>
+						<span class='test-time'>Dec 20, 2019 1:58:47 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 1:58:47 PM</span>
+	<span class='label end-time'>Dec 20, 2019 1:59:07 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 19s+213ms</span>
+</div>
+	<div class='test-desc'>Verify that an esigned weekly product agreement can be updated with a 'referred' decision. This will make the agreement 'Proposal, Referred'. </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:58:57 PM</td>
+					<td class='step-details'>BO_Status_check</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:58:57 PM</td>
+					<td class='step-details'>BO_Status_check has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 13-58-57.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 13-58-57.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:59:06 PM</td>
+					<td class='step-details'>Agreement has successfully created</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:59:07 PM</td>
+					<td class='step-details'>Agreement has successfully created has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 13-59-07.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 13-59-07.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='33'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR29_TC47_1</span>
+						<span class='test-time'>Dec 20, 2019 1:59:08 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 1:59:08 PM</span>
+	<span class='label end-time'>Dec 20, 2019 1:59:10 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+990ms</span>
+</div>
+	<div class='test-desc'>Verify that an agreement arranged on the weekly product which has been 'referred' can be updated with an 'accepted' decision. This will make the agreement 'Active'. </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:59:10 PM</td>
+					<td class='step-details'>Agreement has successfully created</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:59:10 PM</td>
+					<td class='step-details'>Agreement has successfully created has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 13-59-10.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 13-59-10.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='34'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR30_1</span>
+						<span class='test-time'>Dec 20, 2019 1:59:12 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 1:59:12 PM</span>
+	<span class='label end-time'>Dec 20, 2019 1:59:34 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 21s+580ms</span>
+</div>
+	<div class='test-desc'>Creating a new Agreement </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:59:25 PM</td>
+					<td class='step-details'>BO_Status_check</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:59:25 PM</td>
+					<td class='step-details'>BO_Status_check has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 13-59-25.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 13-59-25.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:59:33 PM</td>
+					<td class='step-details'>Agreement has successfully created</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:59:34 PM</td>
+					<td class='step-details'>Agreement has successfully created has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 13-59-34.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 13-59-34.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='35'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR31_TC36_1</span>
+						<span class='test-time'>Dec 20, 2019 1:59:35 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 1:59:35 PM</span>
+	<span class='label end-time'>Dec 20, 2019 2:00:00 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 24s+896ms</span>
+</div>
+	<div class='test-desc'>Verify that the first payment due date for a weekly agreement where activation is delayed is calculated using First Payment Date specified in the Application request </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>1:59:49 PM</td>
+					<td class='step-details'>BO_Status_check</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>1:59:49 PM</td>
+					<td class='step-details'>BO_Status_check has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 13-59-49.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 13-59-49.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:00:00 PM</td>
+					<td class='step-details'>Agreement has successfully created</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:00:00 PM</td>
+					<td class='step-details'>Agreement has successfully created has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 14-00-00.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 14-00-00.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='36'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR32_TC52_1</span>
+						<span class='test-time'>Dec 20, 2019 2:00:02 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 2:00:02 PM</span>
+	<span class='label end-time'>Dec 20, 2019 2:00:17 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 14s+553ms</span>
+</div>
+	<div class='test-desc'>Creating a new Agreement </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:00:16 PM</td>
+					<td class='step-details'>BO_Status_check</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:00:17 PM</td>
+					<td class='step-details'>BO_Status_check has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 14-00-17.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 14-00-17.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='37'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR33_1</span>
+						<span class='test-time'>Dec 20, 2019 2:00:25 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 2:00:25 PM</span>
+	<span class='label end-time'>Dec 20, 2019 2:00:43 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 17s+839ms</span>
+</div>
+	<div class='test-desc'>Creating a new Agreement </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:00:33 PM</td>
+					<td class='step-details'>BO_Status_check</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:00:33 PM</td>
+					<td class='step-details'>BO_Status_check has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 14-00-33.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 14-00-33.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:00:42 PM</td>
+					<td class='step-details'>Agreement has successfully created</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:00:43 PM</td>
+					<td class='step-details'>Agreement has successfully created has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 14-00-43.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 14-00-43.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='38'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR34_1</span>
+						<span class='test-time'>Dec 20, 2019 2:00:44 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 2:00:44 PM</span>
+	<span class='label end-time'>Dec 20, 2019 2:01:04 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 19s+288ms</span>
+</div>
+	<div class='test-desc'>Creating a new Agreement </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:00:52 PM</td>
+					<td class='step-details'>BO_Status_check</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:00:53 PM</td>
+					<td class='step-details'>BO_Status_check has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 14-00-53.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 14-00-53.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:01:03 PM</td>
+					<td class='step-details'>Agreement has successfully created</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:01:04 PM</td>
+					<td class='step-details'>Agreement has successfully created has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 14-01-04.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 14-01-04.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='39'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR35_TC19_1</span>
+						<span class='test-time'>Dec 20, 2019 2:01:05 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 2:01:05 PM</span>
+	<span class='label end-time'>Dec 20, 2019 2:01:36 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 30s+923ms</span>
+</div>
+	<div class='test-desc'>Verify that an existing Provident customer with no active agreements and previous agreements that all completed more than the number of weeks ago set by the 'Further Lending agreement' formula can take out a new loan. </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:01:25 PM</td>
+					<td class='step-details'>BO_Status_check</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:01:26 PM</td>
+					<td class='step-details'>BO_Status_check has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 14-01-26.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 14-01-26.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:01:36 PM</td>
+					<td class='step-details'>Agreement has successfully created</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:01:36 PM</td>
+					<td class='step-details'>Agreement has successfully created has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 14-01-36.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 14-01-36.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='40'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR36_TC20_1</span>
+						<span class='test-time'>Dec 20, 2019 2:01:38 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 2:01:38 PM</span>
+	<span class='label end-time'>Dec 20, 2019 2:01:51 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 12s+879ms</span>
+</div>
+	<div class='test-desc'>Verify that an existing Provident customer with no active agreements and one previous agreement that completed within the number of weeks ago set by the 'Further Lending agreement' formula can take out a new loan. </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:01:51 PM</td>
+					<td class='step-details'>BO_Status_check</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:01:51 PM</td>
+					<td class='step-details'>BO_Status_check has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 14-01-51.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 14-01-51.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='41'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR37_1</span>
+						<span class='test-time'>Dec 20, 2019 2:01:58 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 2:01:58 PM</span>
+	<span class='label end-time'>Dec 20, 2019 2:02:13 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 15s+161ms</span>
+</div>
+	<div class='test-desc'>Creating a new Agreement </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:02:06 PM</td>
+					<td class='step-details'>BO_Status_check</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:02:06 PM</td>
+					<td class='step-details'>BO_Status_check has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 14-02-06.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 14-02-06.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:02:13 PM</td>
+					<td class='step-details'>Agreement has successfully created</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:02:13 PM</td>
+					<td class='step-details'>Agreement has successfully created has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 14-02-13.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 14-02-13.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='42'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR38_TC26_1</span>
+						<span class='test-time'>Dec 20, 2019 2:02:15 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 2:02:15 PM</span>
+	<span class='label end-time'>Dec 20, 2019 2:02:38 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 22s+612ms</span>
+</div>
+	<div class='test-desc'>Verify that the First Due Date calculation for a monthly 28 day product is based on Repayment Day and the '28 day rule' specified for Provident. T </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:02:29 PM</td>
+					<td class='step-details'>BO_Status_check</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:02:29 PM</td>
+					<td class='step-details'>BO_Status_check has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 14-02-29.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 14-02-29.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:02:37 PM</td>
+					<td class='step-details'>Agreement has successfully created</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:02:38 PM</td>
+					<td class='step-details'>Agreement has successfully created has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 14-02-38.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 14-02-38.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='43'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR39_1</span>
+						<span class='test-time'>Dec 20, 2019 2:02:40 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 2:02:40 PM</span>
+	<span class='label end-time'>Dec 20, 2019 2:02:59 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 19s+464ms</span>
+</div>
+	<div class='test-desc'>Creating a new Agreement </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:02:50 PM</td>
+					<td class='step-details'>BO_Status_check</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:02:50 PM</td>
+					<td class='step-details'>BO_Status_check has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 14-02-50.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 14-02-50.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:02:59 PM</td>
+					<td class='step-details'>Agreement has successfully created</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:02:59 PM</td>
+					<td class='step-details'>Agreement has successfully created has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 14-02-59.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 14-02-59.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='44'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR40_1</span>
+						<span class='test-time'>Dec 20, 2019 2:03:02 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 2:03:02 PM</span>
+	<span class='label end-time'>Dec 20, 2019 2:03:26 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 24s+69ms</span>
+</div>
+	<div class='test-desc'>Creating a new Agreement </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:03:15 PM</td>
+					<td class='step-details'>BO_Status_check</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:03:16 PM</td>
+					<td class='step-details'>BO_Status_check has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 14-03-16.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 14-03-16.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:03:25 PM</td>
+					<td class='step-details'>Agreement has successfully created</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:03:26 PM</td>
+					<td class='step-details'>Agreement has successfully created has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 14-03-26.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 14-03-26.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='45'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR41_1</span>
+						<span class='test-time'>Dec 20, 2019 2:03:28 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 2:03:28 PM</span>
+	<span class='label end-time'>Dec 20, 2019 2:03:48 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 19s+652ms</span>
+</div>
+	<div class='test-desc'>Creating a new Agreement </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:03:36 PM</td>
+					<td class='step-details'>BO_Status_check</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:03:37 PM</td>
+					<td class='step-details'>BO_Status_check has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 14-03-37.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 14-03-37.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:03:47 PM</td>
+					<td class='step-details'>Agreement has successfully created</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:03:48 PM</td>
+					<td class='step-details'>Agreement has successfully created has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 14-03-48.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 14-03-48.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='46'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR42_1</span>
+						<span class='test-time'>Dec 20, 2019 2:03:50 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 2:03:50 PM</span>
+	<span class='label end-time'>Dec 20, 2019 2:04:09 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 18s+731ms</span>
+</div>
+	<div class='test-desc'>Creating a new Agreement </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:03:59 PM</td>
+					<td class='step-details'>BO_Status_check</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:03:59 PM</td>
+					<td class='step-details'>BO_Status_check has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 14-03-59.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 14-03-59.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:04:08 PM</td>
+					<td class='step-details'>Agreement has successfully created</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:04:09 PM</td>
+					<td class='step-details'>Agreement has successfully created has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 14-04-09.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 14-04-09.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='47'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR43_1</span>
+						<span class='test-time'>Dec 20, 2019 2:04:11 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 2:04:11 PM</span>
+	<span class='label end-time'>Dec 20, 2019 2:04:34 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 22s+872ms</span>
+</div>
+	<div class='test-desc'>Creating a new Agreement </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:04:22 PM</td>
+					<td class='step-details'>BO_Status_check</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:04:22 PM</td>
+					<td class='step-details'>BO_Status_check has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 14-04-22.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 14-04-22.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:04:33 PM</td>
+					<td class='step-details'>Agreement has successfully created</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:04:34 PM</td>
+					<td class='step-details'>Agreement has successfully created has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 14-04-34.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 14-04-34.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='48'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR44_1</span>
+						<span class='test-time'>Dec 20, 2019 2:04:36 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 2:04:36 PM</span>
+	<span class='label end-time'>Dec 20, 2019 2:05:02 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 25s+637ms</span>
+</div>
+	<div class='test-desc'>Creating a new Agreement </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:04:50 PM</td>
+					<td class='step-details'>BO_Status_check</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:04:50 PM</td>
+					<td class='step-details'>BO_Status_check has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 14-04-50.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 14-04-50.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:05:01 PM</td>
+					<td class='step-details'>Agreement has successfully created</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:05:02 PM</td>
+					<td class='step-details'>Agreement has successfully created has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 14-05-02.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 14-05-02.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='49'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR45_1</span>
+						<span class='test-time'>Dec 20, 2019 2:05:04 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 2:05:04 PM</span>
+	<span class='label end-time'>Dec 20, 2019 2:05:29 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 24s+871ms</span>
+</div>
+	<div class='test-desc'>Creating a new Agreement </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:05:18 PM</td>
+					<td class='step-details'>BO_Status_check</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:05:18 PM</td>
+					<td class='step-details'>BO_Status_check has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 14-05-18.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 14-05-18.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:05:29 PM</td>
+					<td class='step-details'>Agreement has successfully created</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:05:29 PM</td>
+					<td class='step-details'>Agreement has successfully created has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 14-05-29.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 14-05-29.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='50'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR46_1</span>
+						<span class='test-time'>Dec 20, 2019 2:05:31 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 2:05:31 PM</span>
+	<span class='label end-time'>Dec 20, 2019 2:05:53 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 21s+560ms</span>
+</div>
+	<div class='test-desc'>Creating a new Agreement </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:05:41 PM</td>
+					<td class='step-details'>BO_Status_check</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:05:41 PM</td>
+					<td class='step-details'>BO_Status_check has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 14-05-41.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 14-05-41.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:05:53 PM</td>
+					<td class='step-details'>Agreement has successfully created</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:05:53 PM</td>
+					<td class='step-details'>Agreement has successfully created has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 14-05-53.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 14-05-53.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='51'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR47_TC35_1</span>
+						<span class='test-time'>Dec 20, 2019 2:05:55 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 2:05:55 PM</span>
+	<span class='label end-time'>Dec 20, 2019 2:06:29 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 33s+208ms</span>
+</div>
+	<div class='test-desc'>Verify that the first payment due date for a weekly agreement that is activated immediately is calculated using First Payment Date specified in the Application request </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:06:19 PM</td>
+					<td class='step-details'>BO_Status_check</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:06:19 PM</td>
+					<td class='step-details'>BO_Status_check has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 14-06-19.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 14-06-19.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:06:28 PM</td>
+					<td class='step-details'>Agreement has successfully created</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:06:29 PM</td>
+					<td class='step-details'>Agreement has successfully created has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 14-06-29.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 14-06-29.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='52'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR48_TC17</span>
+						<span class='test-time'>Dec 20, 2019 2:06:31 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 2:06:31 PM</span>
+	<span class='label end-time'>Dec 20, 2019 2:06:33 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+458ms</span>
+</div>
+	<div class='test-desc'>Verify that where a payment day of '28' is selected in the Application request for a new monthly product agreement and the First Payment Due Date calculated is 28th February, the payment schedule created for the agreement is not created with scheduled payment dates on the last day of the month (post February). </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:06:32 PM</td>
+					<td class='step-details'>repayment day of 29th, 30th or 31st is not acceptable while creating Agreement</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:06:33 PM</td>
+					<td class='step-details'>repayment day of 29th, 30th or 31st is not acceptable while creating Agreement has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/repayment day of 29th, 30th or 31st is not acceptable while creating Agreement12-20-2019 14-06-33.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/repayment day of 29th, 30th or 31st is not acceptable while creating Agreement12-20-2019 14-06-33.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='53'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR49_1</span>
+						<span class='test-time'>Dec 20, 2019 2:06:36 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 2:06:36 PM</span>
+	<span class='label end-time'>Dec 20, 2019 2:06:59 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 22s+942ms</span>
+</div>
+	<div class='test-desc'>Creating a new Agreement </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:06:48 PM</td>
+					<td class='step-details'>BO_Status_check</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:06:48 PM</td>
+					<td class='step-details'>BO_Status_check has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 14-06-48.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 14-06-48.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:06:58 PM</td>
+					<td class='step-details'>Agreement has successfully created</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:06:59 PM</td>
+					<td class='step-details'>Agreement has successfully created has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 14-06-59.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 14-06-59.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='54'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR50_1</span>
+						<span class='test-time'>Dec 20, 2019 2:07:01 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 2:07:01 PM</span>
+	<span class='label end-time'>Dec 20, 2019 2:07:25 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 24s+90ms</span>
+</div>
+	<div class='test-desc'>Creating a new Agreement </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:07:14 PM</td>
+					<td class='step-details'>BO_Status_check</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:07:15 PM</td>
+					<td class='step-details'>BO_Status_check has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 14-07-15.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Status_check12-20-2019 14-07-15.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:07:25 PM</td>
+					<td class='step-details'>Agreement has successfully created</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:07:25 PM</td>
+					<td class='step-details'>Agreement has successfully created has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 14-07-25.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 14-07-25.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='55'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR50_TC117_1</span>
+						<span class='test-time'>Dec 20, 2019 2:07:28 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 2:07:28 PM</span>
+	<span class='label end-time'>Dec 20, 2019 2:08:10 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 42s+276ms</span>
+</div>
+	<div class='test-desc'>Verify that when a stop category with the 'Cancel Agreement' flag set to 'Yes' (Unwind) is set for an agreement, the agreement status is set to 'Frozen'. </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:07:35 PM</td>
+					<td class='step-details'>BO_Login</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:07:35 PM</td>
+					<td class='step-details'>BO_Login has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Login12-20-2019 14-07-35.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Login12-20-2019 14-07-35.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:08:10 PM</td>
+					<td class='step-details'>BO_StopCategory</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:08:10 PM</td>
+					<td class='step-details'>BO_StopCategory has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/BO_StopCategory12-20-2019 14-08-10.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/BO_StopCategory12-20-2019 14-08-10.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='56'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR51_1</span>
+						<span class='test-time'>Dec 20, 2019 2:08:30 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 2:08:30 PM</span>
+	<span class='label end-time'>Dec 20, 2019 2:08:53 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 23s+264ms</span>
+</div>
+	<div class='test-desc'>Creating a new Agreement </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:08:41 PM</td>
+					<td class='step-details'>BO_StopCategory</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:08:41 PM</td>
+					<td class='step-details'>BO_StopCategory has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/BO_StopCategory12-20-2019 14-08-41.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/BO_StopCategory12-20-2019 14-08-41.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:08:53 PM</td>
+					<td class='step-details'>Agreement has successfully created</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:08:53 PM</td>
+					<td class='step-details'>Agreement has successfully created has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 14-08-53.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 14-08-53.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='57'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR51_TC129_1</span>
+						<span class='test-time'>Dec 20, 2019 2:08:56 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 2:08:56 PM</span>
+	<span class='label end-time'>Dec 20, 2019 2:09:55 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 59s+83ms</span>
+</div>
+	<div class='test-desc'>Verify that unwinding an agreement arranged on the new monthly product cancels the agreement. Transactions (INCV and RADV) have been created automatically to reverse the INDV and ADV Go Live transactions. </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:09:02 PM</td>
+					<td class='step-details'>BO_Login</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:09:03 PM</td>
+					<td class='step-details'>BO_Login has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Login12-20-2019 14-09-03.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/BO_Login12-20-2019 14-09-03.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:09:55 PM</td>
+					<td class='step-details'>BO_StopCategory</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:09:55 PM</td>
+					<td class='step-details'>BO_StopCategory has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/BO_StopCategory12-20-2019 14-09-55.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/BO_StopCategory12-20-2019 14-09-55.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='58'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR52_1</span>
+						<span class='test-time'>Dec 20, 2019 2:10:16 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 2:10:16 PM</span>
+	<span class='label end-time'>Dec 20, 2019 2:10:39 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 22s+949ms</span>
+</div>
+	<div class='test-desc'>Creating a new Agreement </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:10:26 PM</td>
+					<td class='step-details'>BO_StopCategory</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:10:26 PM</td>
+					<td class='step-details'>BO_StopCategory has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/BO_StopCategory12-20-2019 14-10-26.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/BO_StopCategory12-20-2019 14-10-26.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:10:38 PM</td>
+					<td class='step-details'>Agreement has successfully created</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:10:39 PM</td>
+					<td class='step-details'>Agreement has successfully created has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 14-10-39.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 14-10-39.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+				
+				
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='59'>
+					<div class='test-heading'>
+						<span class='test-name'>AGR53_1</span>
+						<span class='test-time'>Dec 20, 2019 2:10:42 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Dec 20, 2019 2:10:42 PM</span>
+	<span class='label end-time'>Dec 20, 2019 2:11:12 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 30s+9ms</span>
+</div>
+	<div class='test-desc'>Verify that if all payments on an agreement arranged on the new monthly product are met, the agreement terminates normally at term end (with zero balance or within specified tolerance). </div>
+	<div class='test-steps'>
+		<table class='bordered table-results'>
+			<thead>
+				<tr>
+					<th>Status</th>
+					<th>Timestamp</th>
+					<th>Details</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:10:59 PM</td>
+					<td class='step-details'>BO_StopCategory</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:10:59 PM</td>
+					<td class='step-details'>BO_StopCategory has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/BO_StopCategory12-20-2019 14-10-59.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/BO_StopCategory12-20-2019 14-10-59.png'></td>
+				</tr>
+				<tr class='log' status='info'>
+					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+					<td class='timestamp'>2:11:11 PM</td>
+					<td class='step-details'>Agreement has successfully created</td>
+				</tr>
+				<tr class='log' status='pass'>
+					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+					<td class='timestamp'>2:11:12 PM</td>
+					<td class='step-details'>Agreement has successfully created has executed successfully<img data-featherlight='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 14-11-12.png' width='10%' src='' data-src='D:\Repository\Credit_services/src/Provident/Screnshots/Agreement has successfully created12-20-2019 14-11-12.png'></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='test-name'></h5>
+
+			<div id='step-filters' class="right">
+				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			</div>
+		</div>
+	</div>
+	<!-- subview right -->
+
+</div>
+<!-- test view --><!-- category view --><!-- exception view --><div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Tests
+					<div class='panel-lead'>59</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>225</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Dec 20, 2019 1:48:20 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Dec 20, 2019 2:11:15 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>1,375,329ms</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view --><!-- testrunner-logs view -->
+		</div>
+		<!-- container -->
+
+		<script>
+			var statusGroup = {
+				passParent: 56,
+				failParent: 3,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 3,
+				
+				passChild: 108,
+				failChild: 6,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 111,
+				exceptionsChild: 6,
+				
+				passGrandChild: 0,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				exceptionsGrandChild: 0,
+			};
+		</script>
+		
+			<script src='https://cdn.rawgit.com/anshooarora/extentreports-java/9fa70d0ed9c34a8ed445ceee3494d3d7de7f8918/dist/js/extent.js' type='text/javascript'></script>
+		
+		
+	</body>
+	
+</html>
