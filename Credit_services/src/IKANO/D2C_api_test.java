@@ -2,8 +2,6 @@ package IKANO;
 import org.apache.commons.lang3.text.WordUtils;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import com.codoid.products.exception.FilloException;
-import com.codoid.products.fillo.Recordset;
 import Common_Funtions.Agreement_Store;
 import Common_Funtions.Common_Property;
 import Common_Funtions.Configuration;
