@@ -1,6 +1,5 @@
 package BO_Pages;
-
-//import org.openqa.selenium.By;
+import org.openqa.selenium.By;
 
 public class BO_AgreementSearch {
 	
