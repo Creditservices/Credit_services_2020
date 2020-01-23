@@ -8,7 +8,6 @@ import Common_Funtions.Agreement_Store;
 import Common_Funtions.Common_Property;
 import Common_Funtions.Configuration;
 import Common_Funtions.Driver;
-import Common_Funtions.Utilities;
 import Common_POMs.*;
 import groovy.util.ResourceException;
 import io.restassured.RestAssured;
