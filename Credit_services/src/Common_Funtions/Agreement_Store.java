@@ -33,9 +33,10 @@ public class Agreement_Store extends Driver {
 	public static void Store_Data(String StrWhichProject, String AgreementNo, String Varied, Recordset Record2)
 			throws Exception {
 		try {
-			if(StrWhichProject.equalsIgnoreCase("Startline")){
+//			if(StrWhichProject.equalsIgnoreCase("Startline")||StrWhichProject.equalsIgnoreCase("Ikano")){
+//			Record2.next();
+//			}
 			Record2.next();
-			}
 			System.out.println(Record2.getField("DATABINDING"));
 			Str_Put_ag_no_databinding = Record2.getField("put_ag_no");
 			String StrAgrQuery;

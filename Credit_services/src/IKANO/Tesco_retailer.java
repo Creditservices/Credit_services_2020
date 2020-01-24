@@ -214,7 +214,7 @@ public class Tesco_retailer extends Driver {
 		String datetimestart = dateFormat.format(sdate);
 		// System.out.println(Rec.getCount());
 		try {
-
+			
 			String agreementno = Common_Property.driver.findElement(By.xpath("//div[@id='SaveBox']/div/p/strong[1]"))
 					.getText();
 			Thread.sleep(700);
