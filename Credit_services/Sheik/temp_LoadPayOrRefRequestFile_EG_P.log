@@ -1,0 +1,67 @@
+
+SQL*Loader: Release 11.2.0.2.0 - Production on Tue Jan 28 15:08:17 2020
+
+Copyright (c) 1982, 2009, Oracle and/or its affiliates.  All rights reserved.
+
+Control File:   /panenv/IKANOTSTENV/data//temp_LoadPayOrRefRequestFile_EG_P.ctl
+Data File:      ././EG_IK_07082016_150700.csv
+  Bad File:     /panenv/IKANOTSTENV/reports/temp_LoadPayOrRefRequestFile_EG_P.bad
+  Discard File:  none specified
+ 
+ (Allow all discards)
+
+Number to load: ALL
+Number to skip: 1
+Errors allowed: 50
+Bind array:     64 rows, maximum of 256000 bytes
+Continuation:    none specified
+Path used:      Conventional
+
+Table "PAN"."TEMP_SUPPLIER_PAYMENT_REQUESTS", loaded from every logical record.
+Insert option in effect for this table: REPLACE
+TRAILING NULLCOLS option in effect
+
+   Column Name                  Position   Len  Term Encl Datatype
+------------------------------ ---------- ----- ---- ---- ---------------------
+TPQ_AGREEMENT_NUMBER                FIRST     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:TPQ_AGREEMENT_NUMBER)"
+TPQ_ADVANCE                          NEXT     *   ,  O(") CHARACTER            
+TPQ_ORDER_NUMBER                     NEXT     *   ,  O(") CHARACTER            
+    SQL string for column : "TRIM(:TPQ_ORDER_NUMBER)"
+TPQ_FILE_DATE                                             CONSTANT
+    Value is 'SELECT TO_CHAR(TO_DATE('Advance','DDMMYYYY'),'DD-MON-YYYY') BK167770.dat BK167772.dat BK167774.dat BK167775.dat BK167776.dat BK167777.dat BK167778.dat BK167779.dat BK167780.dat BK167781.dat BK167785.dat BK167787.dat data_extract EG_IK_07082016_150700.csv EG_SETT_02082016_151934.txt EG_SETT_03082016_112212.txt EG_SETT_04082016_125150.txt EG_SETT_05082016_131207.txt EG_STUS_03082016_084717.txt ERR_20160801_EG_IK_20160801_124000.csv ERR_20160801_EG_IK_20160801_131400.csv ERR_20160801_EG_IK_20160801_132000.csv ERR_20160801_EG_ORNO_IK_20160801_110900.csv ERR_20160801_EG_REF_IK_20160801_091800.csv ERR_20160801_EG_REF_IK_20160801_092200.csv ERR_20160801_EG_REF_IK_20160801_092900.csv ERR_20160801_VG_IK_20160801_135500.csv ERR_20160801_VG_ORNO_IK_20160801_114900.csv HZ_SETT_03082016_112212.txt HZ_SETT_05082016_131207.txt IB167771.txt IB167773.txt IB167782.txt IB167783.txt IB167784.txt IB167786.txt IK20160706125857.csv IK20160707130632.csv IK20160708131344.csv IK20160709131540.csv IK20160710141446.csv IK20160711142135.csv IK20160712143003.csv IK20160713143741.csv IK20160714144619.csv IK20160715145237.csv IK20160716145439.csv IK20160717150256.csv IK20160718150950.csv IK20160719152424.csv IK20160720153147.csv IK20160721153955.csv IK20160722154621.csv IK20160723154741.csv IK20160725160250.csv IK20160726161116.csv IK20160727161747.csv IK20160728162647.csv IK20160729163412.csv IK20160730163555.csv IK20160731164421.csv IK20160801143356.csv IK20160802151930.csv IK20160803112208.csv IK20160804125147.csv IK20160805131204.csv NS_SETT_03082016_112212.txt NS_SETT_05082016_131207.txt paymentfiles pc_batch_complete.flg pc_batch_complete.flgbkup pc_batch_started.flg SUM_20160801_EG_ORNO_IK_20160801_100300.csv SUM_20160801_EG_ORNO_IK_20160801_102400.csv SUM_20160801_EG_ORNO_IK_20160801_110900.csv SUM_20160801_EG_ORNO_IK_20160801_113700.csv SUM_20160801_VG_ORNO_IK_20160801_114900.csv SUM_20160801_VG_ORNO_IK_20160801_123400.csv temp temp_LoadPayOrRefRequestFile_EG_P.ctl VG_SETT_05082016_131207.txt VG_STUS_03082016_101218.txt VG_STUS_03082016_101624.txt VG_STUS_03082016_110618.txt ERROR at line 1: ORA-01858: a non-numeric character was found where a numeric was expected'
+TPQ_FILE_NAME                                             CONSTANT
+    Value is 'EG_IK_07082016_150700.csv'
+TPQ_SOURCE                                                CONSTANT
+    Value is 'EG'
+TPQ_THIRD_PARTY                                           CONSTANT
+    Value is '118774'
+TPQ_TYPE                                                  CONSTANT
+    Value is 'P'
+TPQ_PROCESSED_IND                                         CONSTANT
+    Value is 'N'
+
+Record 1: Rejected - Error on table "PAN"."TEMP_SUPPLIER_PAYMENT_REQUESTS", column TPQ_FILE_DATE.
+ORA-01858: a non-numeric character was found where a numeric was expected
+
+
+Table "PAN"."TEMP_SUPPLIER_PAYMENT_REQUESTS":
+  0 Rows successfully loaded.
+  1 Row not loaded due to data errors.
+  0 Rows not loaded because all WHEN clauses were failed.
+  0 Rows not loaded because all fields were null.
+
+
+Space allocated for bind array:                 191616 bytes(64 rows)
+Read   buffer bytes: 1048576
+
+Total logical records skipped:          1
+Total logical records read:             1
+Total logical records rejected:         1
+Total logical records discarded:        0
+
+Run began on Tue Jan 28 15:08:17 2020
+Run ended on Tue Jan 28 15:08:17 2020
+
+Elapsed time was:     00:00:00.14
+CPU time was:         00:00:00.02

@@ -13,7 +13,7 @@ public class Configuration {
 	public static String Driverpath;
 	public static String Macropath;
 	public static String ProvAPI;
-	public static String screenheight, screenwidth,backuppath,reportpath,OracleDatabase,Excelfileuploadpath,PDFfileuploadpath;
+	public static String screenheight, screenwidth,backuppath,reportpath,OracleDatabase,Excelfileuploadpath,PDFfileuploadpath,IK_DB;
 	public static String Configpath = System.getProperty("user.dir");
 	public static FileInputStream C;
 	public static Properties prop = new Properties();;
@@ -45,6 +45,7 @@ public class Configuration {
 			OracleDatabase=prop.getProperty("OracleDatabase");
 			Excelfileuploadpath=prop.getProperty("Excelfileuploadpath");
 			PDFfileuploadpath=prop.getProperty("PDFfileuploadpath");
+			IK_DB=prop.getProperty("IkanoDataBase");
 			
 		} catch (Exception e) {
 			System.out.println(e);

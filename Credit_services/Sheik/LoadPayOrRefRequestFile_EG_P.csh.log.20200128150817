@@ -1,0 +1,6 @@
+Data path retrieved from database
+Data path: /panenv/IKANOTSTENV/data/
+Archive path retrieved from database
+Archive path: /panenv/IKANOTSTENV/reports/
+Load EG_IK_07082016_150700.csv into TEMP_SUPPLIER_PAYMENT_REQUESTS
+.bad file exists from loader - check before update

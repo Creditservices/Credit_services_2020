@@ -3,8 +3,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="lib" path="D:/Repository/Pancredit/Files/fillo-1.18.jar"/>
-	<classpathentry kind="lib" path="D:/Repository/Pancredit/Files/ojdbc6.jar"/>
-	<classpathentry kind="lib" path="D:/Repository/Pancredit/Files/ojdbc7.jar"/>
 	<classpathentry kind="lib" path="D:/Repository/Pancredit/Files/selenium-java-3.3.1/client-combined-3.3.1-nodeps.jar"/>
 	<classpathentry kind="lib" path="D:/Repository/Pancredit/Files/selenium-java-3.3.1/lib/cglib-nodep-3.2.4.jar"/>
 	<classpathentry kind="lib" path="D:/Repository/Pancredit/Files/selenium-java-3.3.1/lib/client-combined-3.3.1-nodeps.jar"/>
@@ -58,8 +56,6 @@
 	<classpathentry kind="lib" path="D:/Repository/Pancredit/Files/rest assured/json simple/json-simple-1.1.1.jar"/>
 	<classpathentry kind="lib" path="D:/Repository/Pancredit/Files/rest assured/hamcrest/hamcrest-core-1.3.jar"/>
 	<classpathentry kind="lib" path="D:/Repository/Pancredit/Files/rest assured/hamcrest/hamcrest-library-1.3.jar"/>
-	<classpathentry kind="lib" path="D:/SeleniumPack/JDBC/jdbc.jar"/>
-	<classpathentry kind="lib" path="D:/SeleniumPack/JDBC/ojdbc7.jar"/>
 	<classpathentry kind="lib" path="D:/SeleniumPack/All Jars_sheik/jsch-0.1.55.jar"/>
 	<classpathentry kind="lib" path="D:/SeleniumPack/Extent_2.41/extentreports-java-2.41.2/extentreports-2.41.2.jar"/>
 	<classpathentry kind="lib" path="D:/SeleniumPack/Extent_2.41/extentreports-java-2.41.2/lib/ant-1.7.0.jar"/>
@@ -87,5 +83,7 @@
 	<classpathentry kind="lib" path="D:/SeleniumPack/ExtentReport/jsoup-1.9.2.jar"/>
 	<classpathentry kind="lib" path="D:/SeleniumPack/ExtentReport/mongodb-driver-3.3.0.jar"/>
 	<classpathentry kind="lib" path="D:/SeleniumPack/ExtentReport/mongodb-driver-core-3.3.0.jar"/>
+	<classpathentry kind="lib" path="D:/SeleniumPack/JDBC/jdbc.jar"/>
+	<classpathentry kind="lib" path="D:/SeleniumPack/JDBC/ojdbc7.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

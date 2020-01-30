@@ -10,6 +10,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Vector;
 
 import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.Alert;
@@ -26,7 +27,9 @@ import com.codoid.products.fillo.Recordset;
 import com.jcraft.jsch.Channel;
 import com.jcraft.jsch.ChannelSftp;
 import com.jcraft.jsch.JSch;
+import com.jcraft.jsch.JSchException;
 import com.jcraft.jsch.Session;
+import com.jcraft.jsch.SftpException;
 
 import Common_Funtions.Agreement_Store;
 import Common_Funtions.Common_Property;
@@ -40,7 +43,8 @@ public class Tesco_retailer extends Driver {
 	public static ArrayList<String> attributes = new ArrayList<String>();
 	public static Recordset get_agr_sheet;
 	public static boolean flag = false;
-	public static String filename;
+	public static String filename,AltFilename,fileexe;
+	
 
 	public static void Start_App() throws IOException, InterruptedException, FilloException {
 		System.out.println("Method Now Running: " + Thread.currentThread().getStackTrace()[1].getMethodName());
@@ -546,15 +550,15 @@ public class Tesco_retailer extends Driver {
 			Utilities.ExtentPassReport("All the PDF document has generated");
 			Common_Property.driver.findElement(By.xpath("//a/span[text()='Next']")).click();
 			Thread.sleep(1000);
-			Common_Property.driver.findElement(By.xpath("//a/span[text()='Continue']")).click();
-			Thread.sleep(1000);
-			WebElement ver2 = Common_Property.driver.findElement(By.xpath("//a[@id='goodsDelivered']/span"));
-			if (ver2.isEnabled()) {
-				Utilities.ExtentPassReport("Approved Goods ");
-			} else {
-				String Desc = "Agreement is not created as expected,throws unexpected error";
-				Utilities.ExtentFailReport1(methodname, Desc);
-			}
+//			Common_Property.driver.findElement(By.xpath("//a/span[text()='Continue']")).click();
+//			Thread.sleep(1000);
+//			WebElement ver2 = Common_Property.driver.findElement(By.xpath("//a[@id='goodsDelivered']/span"));
+//			if (ver2.isEnabled()) {
+//				Utilities.ExtentPassReport("Approved Goods ");
+//			} else {
+//				String Desc = "Agreement is not created as expected,throws unexpected error";
+//				Utilities.ExtentFailReport1(methodname, Desc);
+//			}
 
 		} catch (Exception e) {
 
@@ -695,9 +699,14 @@ public class Tesco_retailer extends Driver {
 
 		try {
 			Common_Property.SqlConnection();
-
-			String Agr_num = "'" + recordset1.getField("Agreement_Number") + "'";
+			String Query5 = "select to_char(pp_pan_process_date.gf_date_with_time() ,'ddMMYYYYHH24MISS') as currenttime from dual";
+            Common_Property.Pst = Common_Property.SQLcon.prepareStatement(Query5);
+            Common_Property.rs1 = Common_Property.st.executeQuery(Query5);
+            Common_Property.rs1.next();
+            fileexe= Common_Property.rs1.getString("currenttime");
+			String Agr_num = "'" + recordset1.getField("Agreement_Number")+"'";
 			filename = recordset1.getField("ESM_filename");
+			AltFilename = filename + "_"+fileexe;
 			String Query2 = "select agr_agreement_number, agr_serial, agr_status_1, agr_status_2, agr_status_code_vlc, agr_advance,TO_CHAR(agr_signed_date,'DD-MON-YYYY') as agr_signed_date,TO_CHAR(PP_PAN_PROCESS_DATE.GF_DATE_WITHOUT_TIME(),'DD-MON-YYYY') as Process_date"
 					+ " from agreements  where agr_agreement_number =" + Agr_num + "";
 			Common_Property.Pst = Common_Property.SQLcon.prepareStatement(Query2);
@@ -731,10 +740,11 @@ public class Tesco_retailer extends Driver {
 				String update = Common_Property.StrUpdateQuery("Sheet1", FieldNames, FieldValues);
 				connection.executeUpdate(update);
 				String Desc = "All the verification has been done successfully";
-				Utilities.ExtentPassReport(methodname);
+				Utilities.ExtentPassReport(Desc);
 				System.out.println(Agr_num + " Has Passed");
 				convertXLSXtoCSV(recordset1, Common_Property.directory + "/" + filename);
-				// send(Common_Property.directory+filename);
+				sendCSV(Common_Property.directory+ "/"+AltFilename+".csv");
+				
 
 			} else {
 				System.out.println(Agr_num + " Has  not Passed");
@@ -890,11 +900,12 @@ public class Tesco_retailer extends Driver {
 		MethodName = (Thread.currentThread().getStackTrace()[1].getMethodName());
 		Methodid = Long.toString(Thread.currentThread().getId());
 		try {
-			FileWriter fw = new FileWriter(outputFile1);
+			FileWriter fw = new FileWriter(AltFilename+".csv");
 			BufferedWriter bufferedWriter = new BufferedWriter(fw);
 			int cnt = 1;
 			String data1;
 			connection = fillo.getConnection(Configuration.Datapath + WhichClient + ".xlsx");
+			
 			String query = "Select * from Sheet1 where ESM_validation='Yes' and ESM_filename=" + "'" + filename + "'";
 			System.out.println(query);
 			rs = connection.executeQuery(query);
@@ -902,10 +913,10 @@ public class Tesco_retailer extends Driver {
 			while (rs.next()) {
 
 				if (cnt == 1) {
-					data1 = "AgreementNumber" + "," + "Advance" + "," + "put_ag_no";
+					data1 = "AgreementNumber" + "," + fileexe.subSequence(0,7) +","+"Order_Number";
 					bufferedWriter.write(data1);
 					bufferedWriter.newLine();
-					data1 = rs.getField("Agreement_Number") + "," + rs.getField("Misc") + ","
+					data1 = rs.getField("Agreement_Number") + "," + rs.getField("Misc").replaceFirst("£", "").trim()+ ","
 							+ rs.getField("put_ag_no");
 					bufferedWriter.write(data1);
 					cnt++;
@@ -927,5 +938,96 @@ public class Tesco_retailer extends Driver {
 			Configuration.updatePropertyFile(Methodid,MethodName,"False");
 		}
 	}
+	
+	public static void sendCSV(String fileName) {
+	                String SFTPHOST ="linux02";          //host name
+	                int SFTPPORT = 22;                                                  //Port number
+	                String SFTPUSER = "emay";                         //Linux02 USER"S username
+	                String SFTPPASS = "sachin@123";               //Linux02 USER"S Password
+	                String SFTPWORKINGDIR = "/panenv/IKANOTSTENV/data";
+	                         
+	                Session session = null;
+	                Channel channel = null;
+	                ChannelSftp channelSftp = null;
+	                System.out.println("preparing the host information for sftp.");
 
+	                try 
+	                {
+	                    JSch jsch = new JSch();
+	                    session = jsch.getSession(SFTPUSER, SFTPHOST, SFTPPORT);
+	                    session.setPassword(SFTPPASS);
+	                    java.util.Properties config = new java.util.Properties();
+	                    config.put("StrictHostKeyChecking", "no");
+	                    session.setConfig(config);
+	                    session.connect();
+	                    System.out.println("Host connected.");
+	                    channel = session.openChannel("sftp");
+	                    channel.connect();
+	                    System.out.println("sftp channel opened and connected.");
+	                    channelSftp = (ChannelSftp) channel;
+	                    channelSftp.cd(SFTPWORKINGDIR);
+	                    File f = new File(fileName);
+	                    channelSftp.put(new FileInputStream(f), f.getName());
+	                    Boolean value=exists(channelSftp,SFTPWORKINGDIR+"/"+AltFilename+".csv");
+	                    if(value==true){
+	                    System.out.println("File transfered successfully to host.");
+	                    }
+	                   
+	                  
+	                } 
+	                catch (Exception ex) 
+	                {
+	                    System.out.println("Exception found while tranfer the response " +ex);
+	                } 
+	                finally 
+	                {
+	                    channelSftp.exit();
+	                    System.out.println("sftp Channel exited.");
+	                    channel.disconnect();
+	                    System.out.println("Channel disconnected.");
+	                    session.disconnect();
+	                    System.out.println("Host Session disconnected.");
+	                }
+	            } 
+	
+	public static void download () 
+	            {
+	                        JSch jsch = new JSch();
+	                    Session session = null;
+	                    try {
+	                        session = jsch.getSession("emay", "Linux02", 22);
+	                        session.setConfig("StrictHostKeyChecking", "no");
+	                        session.setPassword("sachin@123");
+	                        session.connect();
+
+	                        Channel channel = session.openChannel("sftp");
+	                        channel.connect();
+	                        ChannelSftp sftpChannel = (ChannelSftp) channel;
+	                        sftpChannel.get("//panenv//IKANOTSTENV//data//VG_REF_IK_20160421_121000.csv", "C://refunds file//");
+	                        sftpChannel.exit();
+	                        session.disconnect();
+	                    } catch (JSchException e) {
+	                        e.printStackTrace();  
+	                    } catch (SftpException e) {
+	                        e.printStackTrace();
+	                    }
+	            } 
+	
+	private static boolean exists(ChannelSftp channelSftp, String path) {
+	    Vector res = null;
+	    try {
+	        res = channelSftp.ls(path);
+	    } catch (SftpException e) {
+	        if (e.id == ChannelSftp.SSH_FX_NO_SUCH_FILE) {
+	            return false;
+	        }
+	        //log.error("Unexpected exception during ls files on sftp: [{}:{}]", e.id, e.getMessage());
+	    }
+	    return res != null && !res.isEmpty();
+	}
+	
+	            
 }
+
+
+

@@ -1,2 +1,2 @@
-Oct 16, 2019 3:36:11 PM Common_Funtions.Utilities log_file
-INFO: java.lang.NullPointerException
+Jan 30, 2020 11:04:49 AM Common_Funtions.Utilities log_file
+INFO: com.codoid.products.exception.FilloException: Update query cannot be proccesed, if File is already opened. File Path-C:/Users/liyakaS/git/Credit_service_2020/Credit_services/DriverData/Ikano.xlsx

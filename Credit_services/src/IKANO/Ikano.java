@@ -142,7 +142,7 @@ public class Ikano extends Driver
 												break;
 												
 											case "Batchrun":
-												Backoffice.Batchrun(Ikano_recordset1);
+												BackOffice.Batchrun(Ikano_recordset1);
 												break;
 												
 											case "d2c_api":
@@ -153,7 +153,11 @@ public class Ikano extends Driver
 											case "frontofficeApprove" :
 												Driver.refreshSheet1(bindingvalue,Ikano_recordset1);
 												D2C_api_test.frontofficeApprove(Driver.recordset1.getField("Agreement_Number"));
-															 
+												
+											case "BO_Status_check":
+												BackOffice.BO_Status_check();
+												break;
+														 
 										 }
 								}
 						    	else {

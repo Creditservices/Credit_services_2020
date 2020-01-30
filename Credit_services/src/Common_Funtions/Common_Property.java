@@ -11,6 +11,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
@@ -52,6 +54,9 @@ public class Common_Property extends Driver {
 		MethodName = (Thread.currentThread().getStackTrace()[1].getMethodName());
 		Methodid = Long.toString(Thread.currentThread().getId());	
 		try {
+			DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HHmmss");  
+			   LocalDateTime now = LocalDateTime.now();  
+			   System.out.println(dtf.format(now));
 
 			if (driver == null) {
                 Configuration.updatePropertyFile(Methodid,MethodName,"True");
@@ -528,6 +533,24 @@ public class Common_Property extends Driver {
 	 			
 	 }
 	
-    
+    public static void SQLquery(String query,String database) throws SQLException
+	{
+		try
+		{
+				Class.forName("oracle.jdbc.driver.OracleDriver");
+				Common_Property.SQLcon = DriverManager.getConnection(database, "forte", "forte");
+				System.out.println("Connected Database :"+database);
+				Common_Property.st = Common_Property.SQLcon.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_UPDATABLE);
+				String Query1 = query;
+				System.out.println(Query1);
+				Common_Property.Pst = Common_Property.SQLcon.prepareStatement(Query1);
+				Common_Property.rs = Common_Property.st.executeQuery(Query1);
+			    Common_Property.rs.next();
+					
+		} 
+		catch (Exception e) {
+			System.out.println("Query has not successfully executed");
+		}
+	}
     
 }
