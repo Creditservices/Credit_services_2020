@@ -106,11 +106,7 @@ public class BackOffice extends Driver {
                     Calendar c1 = Calendar.getInstance();
                     c1.setTime(sdf1.parse(stdate));
                     Date date = new Date();
-//                    Common_Property.SQLcon = DriverManager.getConnection("jdbc:oracle:thin:@linux03:1524:IKANOTST", "forte",
-//                            "forte");
-//                    Common_Property.st = Common_Property.SQLcon.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
-//                    		ResultSet.CONCUR_UPDATABLE);
-                   // if (BatchList.get(c_batch).contains("Overnight")) {
+
                         for (int i = 1; i <= nxt; i++) {
                             c1.add(Calendar.DAY_OF_MONTH, 1);
                             date = c1.getTime();
@@ -118,9 +114,7 @@ public class BackOffice extends Driver {
                             System.out.println(sdf1.format(date));
                             String Query2 = "select to_char(pp_pan_process_date.gf_date_without_time() ,'dd-MON-YYYY') as Sys_Date from dual";
                             Common_Property.SQLquery(Query2,Configuration.IK_DB);
-//                            Common_Property.Pst = Common_Property.SQLcon.prepareStatement(Query2);
-//                            Common_Property.rs1 = Common_Property.st.executeQuery(Query2);
-//                            Common_Property.rs1.next();
+                            
                             while (true) {
                                 Common_Property.rs.refreshRow();
                                 String currentdate = Common_Property.rs1.getString("Sys_Date");
@@ -128,7 +122,7 @@ public class BackOffice extends Driver {
                                     System.out.println("System date has changed to " + currentdate);
                                     break;
                                 }
-                                // Thread.sleep(180000);
+                                
                             }
                         }
     				}
@@ -141,10 +135,7 @@ public class BackOffice extends Driver {
                 Common_Property.driver.findElement(By.xpath("//div[text()='Save']")).click();
                 Thread.sleep(500);
     				}
-//                Common_Property.SQLcon = DriverManager.getConnection("jdbc:oracle:thin:@linux03:1524:IKANOTST", "forte",
-//                        "forte");
-//                Common_Property.st = Common_Property.SQLcon.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,
-//                		ResultSet.CONCUR_UPDATABLE);
+
                 String Query2 = "select * from (select * from BATCH_JOBS job "
                             + "join BATCH_GROUPS_AND_PROCESSES bpr on bpr.bpr_serial = job.JOB_BATCH_ABSTRACT_PROCESS "
                             + " where to_char(JOB_START_DATE_TIME,'DD-MON-YYYY') = to_date('" + sysdate
@@ -154,27 +145,14 @@ public class BackOffice extends Driver {
                     Thread.sleep(20000);
                     System.out.println(Common_Property.rs.getString("JOB_STATUS"));
                     
-//                    Common_Property.Pst = Common_Property.SQLcon.prepareStatement(Query2);
-//                    Common_Property.rs2 = Common_Property.st.executeQuery(Query2);
-//                    Common_Property.rs2.next();
-                   
-//                    while(!Common_Property.rs2.getString("JOB_STATUS").equals("C")) {
-//                	    Common_Property.rs2.refreshRow();
-//                        
-//                    }
-                  
-    			
-        
+
                 if(BatchList.get(c_batch).equalsIgnoreCase("Load TESTCO Payment Request File")){
-//                Common_Property.SqlConnection();
                 String Agr_num = "'" + recordset1.getField("Agreement_Number") + "'";
     			String filename = recordset1.getField("ESM_filename");
     			String Query3 = "select * from PAN.SUPPLIER_PAYMENT_REQUESTS where SPQ_AGREEMENT_NUMBER=" + Agr_num + " order by SPQ_SERIAL desc";
     			Common_Property.SQLquery(Query3,Configuration.IK_DB);
     			
-//    			Common_Property.Pst = Common_Property.SQLcon.prepareStatement(Query3);
-//    			Common_Property.rs1 = Common_Property.st.executeQuery(Query3);
-//    			Common_Property.rs1.next();
+
     			Thread.sleep(20000);
     			System.out.println(Common_Property.rs.getString("SPQ_FILE_NAME"));
     			System.out.println(Tesco_retailer.AltFilename+".csv");
@@ -192,16 +170,13 @@ public class BackOffice extends Driver {
         			String Query3 = "select * from PAN.SUPPLIER_PAYMENT_REQUESTS where SPQ_AGREEMENT_NUMBER=" + Agr_num + " order by SPQ_SERIAL desc";
         			Common_Property.SQLquery(Query3,Configuration.IK_DB);
         			
-//        			Common_Property.Pst = Common_Property.SQLcon.prepareStatement(Query3);
-//        			Common_Property.rs1 = Common_Property.st.executeQuery(Query3);
-//        			Common_Property.rs1.next();
-        			Thread.sleep(20000);
+                    Thread.sleep(20000);
         			System.out.println(Common_Property.rs.getString("SPQ_FILE_NAME"));
         			System.out.println(Tesco_retailer.AltFilename+".csv");
         			
         			if(Common_Property.rs.getString("SPQ_FILE_NAME").equals(Tesco_retailer.AltFilename+".csv")) {
         				System.out.println("File has moved to supplier table successfully");
-                	  //  Common_Property.rs1.refreshRow();
+                	  //Common_Property.rs1.refreshRow();
                         
                     }
         			

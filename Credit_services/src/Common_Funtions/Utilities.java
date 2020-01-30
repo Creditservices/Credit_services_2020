@@ -345,7 +345,55 @@ public class Utilities extends Driver
 			}
 		}
 		
-	
+		public static void ExtentPassReportforSQL(String TestName,String Actualresult) throws IOException, InterruptedException, FilloException
+		{
+		try
+		{ 		//Changed for startline
+				TestName = TestName.replace("'", ""); //Changed for startline
+				TestName = TestName.replace(":","-");  //Changed for startline
+			test_step="Pass";
+			    test.log(Status.INFO, TestName);
+			    //test.log(Status.PASS, TestName+" Executed Successfully");
+		    if(Common_Property.driver==null)
+		    {
+		    	test.pass(TestName +" has executed successfully and the result"+Actualresult);
+		    }
+		    else
+		    {
+				test.pass(TestName +" has executed successfully and the result"+Actualresult);
+		    }
+				extent.flush();
+			}
+			catch(Exception e)
+		    {
+		    	System.out.println(e);
+		    }
+		}
+		//implemented for all sql query failresult without screenshot
+		public static void ExtentFailReportforSQL(String TestName,String Actualresult ) throws IOException, FilloException, InterruptedException
+		{
+	    try
+	    {
+				test_step="Fail";
+				test.log(Status.INFO, TestName+ " Initiated");
+			if(Common_Property.driver==null)
+		    {
+		    	test.fail(TestName +" has failed and the result"+Actualresult);
+		    	test.log(Status.FAIL, TestName);
+		    }
+			else
+			{
+				//test.log(Status.FAIL, TestName+" execution has Failed");
+				test.fail(TestName +" has failed find the below Screenshot and the result"+Actualresult);
+				test.log(Status.FAIL, TestName);
+				//test.log(Status.ERROR, "StackTrace Result: " + Thread.currentThread().getStackTrace());
+			}
+				extent.flush();
+	     }
+	    catch(Exception e){
+	    	System.out.println(e);
+	    }
+	}
 	
 	
 }
